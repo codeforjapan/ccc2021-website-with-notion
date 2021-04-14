@@ -1,0 +1,37 @@
+$indigo-1: #170f7b;
+
+$font-ja: 'Noto Sans JP', sans-serif;
+$font-en: 'Spartan', sans-serif;
+
+.PersonalSponsors {
+  margin-bottom: 50px;
+  p {
+    line-height: 2.07;
+    letter-spacing: normal;
+    color: $indigo-1;
+    padding-left: 1em;
+    font: {
+      family: $font-ja;
+      size: 16px;
+      weight: 700;
+    }
+  }
+  &-Button {
+    display: flex;
+    justify-content: center;
+    &-Label {
+      font-family: $font-ja;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.93px;
+    }
+  }
+  .PersonalSponsors-Names {
+    margin-right: 20px;
+    .PersonalSponsors-Sama {
+      margin-left: 3px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+  }
+}

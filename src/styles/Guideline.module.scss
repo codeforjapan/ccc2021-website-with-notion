@@ -1,0 +1,50 @@
+$indigo-1: #170f7b;
+
+$font-ja: 'Noto Sans JP', sans-serif;
+$font-en: 'Spartan', sans-serif;
+
+.GuideLine {
+  margin-bottom: 50px;
+}
+
+.GuideLineCard {
+  padding: 15px;
+  background-color: #f5f5f2;
+  font-family: $font-ja;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.67;
+  letter-spacing: normal;
+  color: $indigo-1 !important;
+
+  h3 {
+    font-family: $font-ja;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 2.5;
+    letter-spacing: normal;
+    color: $indigo-1 !important;
+  }
+  a {
+    color: $indigo-1 !important;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  ul {
+    padding: 0 30px;
+    > ul {
+      padding: 0 20px;
+      >ul {
+        padding: 0;
+      }
+    }
+  }
+  hr {
+    margin: 10px;
+  }
+  ul + p {
+    margin-top: 2em;
+  }
+
+}

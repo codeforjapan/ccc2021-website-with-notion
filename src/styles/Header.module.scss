@@ -1,0 +1,89 @@
+$indigo-1: #170f7b;
+
+$font-ja: 'Noto Sans JP', sans-serif;
+$font-en: 'Spartan', sans-serif;
+
+.Title {
+  font-family: $font-en;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: normal;
+  color: #170f7b;
+}
+.Footer {
+  font-family: $font-en;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 2;
+  letter-spacing: 0.67px;
+  color: $indigo-1;
+  .Privacy-Policy {
+    color: $indigo-1;
+  }
+  .Code-for-Japan {
+    text-align: right;
+  }
+}
+.FirstView {
+  margin: 0;
+  position: static;
+  height: 100%;
+  text-align: center;
+  background-position-x: center;
+  background-position-y: top;
+  background-image: url('/ccc2021_keyvisual_bg.png');
+  background-size: cover;
+  width: 100%;
+  color: #fff;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+
+.Logo {
+  width: 65%;
+  height: auto;
+  margin: 4vh auto;
+  max-width: 700px;
+}
+.FirstViewCard {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 30px 50px;
+  width: 80%;
+  background-color: #fff;
+  border-width: thin;
+  display: block;
+  max-width: 800px;
+  outline: 0;
+  text-decoration: none;
+  transition-property: box-shadow,opacity;
+  word-wrap: break-word;
+  position: relative;
+  white-space: normal;
+  margin-bottom: 50px;
+  text-align: left;
+  @media (max-width: 750px) {
+    padding: 30px;
+  }
+  h1 {
+    font-family: $font-ja;
+    font-size: 35px;
+    font-weight: 900;
+    line-height: 1.51;
+    letter-spacing: 2.33px;
+    color: $indigo-1;
+    .Marker {
+      background: linear-gradient(transparent 60%, #ffd500 30%);
+    }
+  }
+  p {
+    font-family: $font-ja;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.94;
+    letter-spacing: 1px;
+    color: $indigo-1 !important;
+    text-align: left;
+  }
+}

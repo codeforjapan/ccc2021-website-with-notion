@@ -1,0 +1,40 @@
+$indigo-1: #170f7b;
+
+$font-ja: 'Noto Sans JP', sans-serif;
+$font-en: 'Spartan', sans-serif;
+
+.ExaminationCriteria {
+  margin-bottom: 50px;
+  ol {
+    list-style-type: none;
+    padding: 0;
+    background: transparent;
+  }
+  ol li {
+    position: relative;
+    line-height: 50px;
+    padding: 0.5em 0 0.5em 55px;
+    font-family: $font-ja;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1.4px;
+    color: $indigo-1;
+  }
+  ol li::before {
+    position: absolute;
+    display: inline-block;
+    content: counter(list-item, upper-alpha);
+    background: $indigo-1;
+    color: white;
+    font-family: $font-en;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 50%;
+    left: 0;
+    top: 12px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+  }
+}
