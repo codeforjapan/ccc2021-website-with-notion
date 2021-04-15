@@ -24,8 +24,15 @@ const HeroView: FC<Content> = (props: Content) => {
           </div>
         </Flex>
         <Spacer />
-        <Button rounded={100} mr={4} bgColor={'brand.indigo'} color={'white'}>
-          エントリー受付中！
+        <Button
+          rounded={100}
+          mr={4}
+          bgColor={'brand.indigo'}
+          color={'white'}
+          disabled
+          _hover={{ bgColor: 'brand.indigo' }}
+        >
+          エントリー
         </Button>
       </Flex>
       <Box className={styles.FirstViewContain}>
