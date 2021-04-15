@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { Box, Flex, Spacer, Link } from '@chakra-ui/react'
 import styles from '~/src/styles/Footer.module.scss'
 
-const HeroView: FC = () => {
+const Footer: FC = () => {
   return (
     <Box className={styles.FirstView}>
       <Flex
@@ -37,4 +37,4 @@ const HeroView: FC = () => {
   )
 }
 
-export default HeroView
+export default Footer
