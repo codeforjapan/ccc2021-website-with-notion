@@ -4,7 +4,6 @@ $font-ja: 'Noto Sans JP', sans-serif;
 $font-en: 'Spartan', sans-serif;
 
 .GuideLine {
-  margin-bottom: 50px;
 }
 
 .GuideLineCard {
@@ -35,7 +34,7 @@ $font-en: 'Spartan', sans-serif;
     padding: 0 30px;
     > ul {
       padding: 0 20px;
-      >ul {
+      > ul {
         padding: 0;
       }
     }
@@ -46,5 +45,4 @@ $font-en: 'Spartan', sans-serif;
   ul + p {
     margin-top: 2em;
   }
-
 }

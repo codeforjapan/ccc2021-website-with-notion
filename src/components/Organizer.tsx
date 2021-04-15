@@ -7,7 +7,7 @@ import styles from '~/src/styles/Organizer.module.scss'
 
 const Organizer: FC<Content> = (props: Content) => {
   return (
-    <Container maxW="container.xl">
+    <Container maxW="container.xl" py={10}>
       <Box
         as={'section'}
         className={styles.Organizer}

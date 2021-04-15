@@ -22,12 +22,6 @@ const Footer: FC = () => {
         >
           Privacy Policy
         </Link>
-        {/* <a
-          className="Privacy-Policy"
-          href="https://www.code4japan.org/privacy-policy"
-        >
-          Privacy Policy
-        </a> */}
         <Spacer width="50px" flex="0 0 50px" />
         <span className={styles.CodeForJapan}>
           &copy;&nbsp;2021&nbsp;Code&nbsp;for&nbsp;Japan

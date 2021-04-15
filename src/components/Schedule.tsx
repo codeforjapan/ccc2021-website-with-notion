@@ -6,7 +6,7 @@ import { NotionRenderer } from 'react-notion'
 import styles from '~/src/styles/Schedule.module.scss'
 const Schedule: FC<Content> = (props: Content) => {
   return (
-    <Container maxW="container.xl">
+    <Container maxW="container.xl" py={10}>
       <Box
         as={'section'}
         className={styles.Schedule}
