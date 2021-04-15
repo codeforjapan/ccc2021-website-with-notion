@@ -8,8 +8,8 @@ const SpecialSponsors: FC<Content> = (props: Content) => {
   return (
     <Container maxW="container.xl" py={10}>
       <Box as={'section'} style={{ padding: '0 24px' }}>
-        <SectionTitle enTitle={props['EN Name']} jaTitle={props['JP Name']} />
-        {props['Coming Soon'] && <ComingSoon />}
+        <SectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
+        {props.isComingSoon && <ComingSoon />}
       </Box>
     </Container>
   )

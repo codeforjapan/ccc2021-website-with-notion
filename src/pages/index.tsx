@@ -36,15 +36,22 @@ type ContentType =
   | string
 
 export interface Content {
+  // Auto-generated ID
   id: string
-  Type: ContentType
+
+  // Data from `Contents` table
+  enTitle: string
+  jaTitle?: string
+  type: ContentType
   Sponsors?: string[]
-  'Coming Soon'?: boolean
-  'JP Name'?: string
-  'EN Name': string
+  isComingSoon?: boolean
+  isHidden?: boolean
+  itemDatabaseId?: string
+
+  // Data of the page of each item
   pageData: BlockMapType
-  Hidden: boolean | undefined
-  ItemDatabaseId: string
+
+  // Data from the other table that an item linked to
   linkedItems?: unknown[]
 }
 
@@ -68,16 +75,16 @@ export const getStaticProps = async () => {
   )
 
   const indexContents: Content[] = await indexContentsResponse.json()
-  const ContentsPromises = indexContents
-    .filter((c) => !c.Hidden)
+  const contentsPromises = indexContents
+    .filter((c) => !c.isHidden)
     .map(async (content) => {
       const pageDataResponse = await getNotionData('page', content.id)
       const pageData = (await pageDataResponse.json()) as BlockMapType
 
-      if (content.ItemDatabaseId) {
+      if (content.itemDatabaseId) {
         const itemsResponse = await getNotionData(
           'table',
-          content.ItemDatabaseId
+          content.itemDatabaseId
         )
         const linkedItems = await itemsResponse.json()
         return {
@@ -91,10 +98,11 @@ export const getStaticProps = async () => {
         pageData
       }
     })
-  const Contents = await Promise.all(ContentsPromises)
+  const contents = await Promise.all(contentsPromises)
+
   return {
     props: {
-      contents: Contents
+      contents
     },
     revalidate: 1
   }
@@ -104,7 +112,7 @@ const IndexPage = ({ contents }: Props) => {
   return (
     <Box className={styles.Index}>
       {contents.map((content) => {
-        switch (content.Type) {
+        switch (content.type) {
           case 'Share':
             return <Share key={content.id} />
           case 'Header':
@@ -138,8 +146,8 @@ const IndexPage = ({ contents }: Props) => {
               <Container maxW="container.xl" py={10} key={content.id}>
                 <Box as={'section'} style={{ padding: '0 24px' }}>
                   <SectionTitle
-                    enTitle={content['EN Name']}
-                    jaTitle={content['JP Name']}
+                    enTitle={content.enTitle}
+                    jaTitle={content.jaTitle}
                   />
                   <NotionRenderer blockMap={content.pageData} />
                 </Box>

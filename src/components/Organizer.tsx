@@ -13,7 +13,7 @@ const Organizer: FC<Content> = (props: Content) => {
         className={styles.Organizer}
         style={{ padding: '0 24px' }}
       >
-        <SectionTitle enTitle={props['EN Name']} jaTitle={props['JP Name']} />
+        <SectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
         <NotionRenderer blockMap={props.pageData} />
       </Box>
     </Container>

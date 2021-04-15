@@ -13,7 +13,7 @@ const Guidelines: FC<Content> = (props: Content) => {
         className={styles.GuideLine}
         style={{ padding: '0 24px' }}
       >
-        <SectionTitle enTitle={props['EN Name']} jaTitle={props['JP Name']} />
+        <SectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
         <Box className={styles.GuideLineCard}>
           <NotionRenderer blockMap={props.pageData} />
         </Box>

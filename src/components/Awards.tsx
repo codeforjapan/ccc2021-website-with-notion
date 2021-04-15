@@ -9,7 +9,7 @@ const Awards: FC<Content> = (props: Content) => {
   return (
     <Container maxW="container.xl">
       <Box as={'section'} className={style.Award} style={{ padding: '0 24px' }}>
-        <SectionTitle enTitle={props['EN Name']} jaTitle={props['JP Name']} />
+        <SectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
         <NotionRenderer blockMap={props.pageData} />
       </Box>
     </Container>
