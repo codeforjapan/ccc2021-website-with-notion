@@ -10,25 +10,11 @@ $font-en: 'Spartan', sans-serif;
   line-height: normal;
   color: #170f7b;
 }
-.Footer {
-  font-family: $font-en;
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 2;
-  letter-spacing: 0.67px;
-  color: $indigo-1;
-  .Privacy-Policy {
-    color: $indigo-1;
-  }
-  .Code-for-Japan {
-    text-align: right;
-  }
-}
 .FirstView {
   margin: 0;
   position: static;
   height: 100%;
-  text-align: center;
+  text-align: left;
   background-position-x: center;
   background-position-y: top;
   background-image: url('/ccc2021_keyvisual_bg.png');
@@ -38,7 +24,6 @@ $font-en: 'Spartan', sans-serif;
   align-items: center;
   padding-bottom: 20px;
 }
-
 
 .Logo {
   width: 65%;
@@ -57,7 +42,7 @@ $font-en: 'Spartan', sans-serif;
   max-width: 800px;
   outline: 0;
   text-decoration: none;
-  transition-property: box-shadow,opacity;
+  transition-property: box-shadow, opacity;
   word-wrap: break-word;
   position: relative;
   white-space: normal;
