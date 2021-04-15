@@ -10,9 +10,10 @@ import Sponsors from '~/src/components/Sponsors'
 import PersonalSponsors from '~/src/components/PersonalSponsors'
 import Organizer from '~/src/components/Organizer'
 import Footer from '~/src/components/Footer'
+import NewsList from '~/src/components/NewsList'
 
 import { BlockMapType } from 'react-notion'
-import { Box } from '@chakra-ui/react'
+import { Box, Container } from '@chakra-ui/react'
 import { NotionRenderer } from 'react-notion/dist'
 import styles from '~/src/styles/index.module.scss'
 import Share from '~/src/components/Share'
@@ -31,6 +32,7 @@ type ContentType =
   | 'Personal Sponsors'
   | 'Organizer'
   | 'Footer'
+  | 'NewsList'
   | string
 
 export interface Content {
@@ -42,44 +44,53 @@ export interface Content {
   'EN Name': string
   pageData: BlockMapType
   Hidden: boolean | undefined
+  ItemDatabaseId: string
+  linkedItems?: unknown[]
 }
 
 interface Props {
   contents: Content[]
 }
 
-export const getStaticProps = async () => {
-  const res = await fetch(
-    'https://notion-api.splitbee.io/v1/table/' +
-      process.env.NEXT_PUBLIC_INDEX_DB_ID,
-    // process.env.APIURL ? process.env.APIURL : 'https://strapi.palettte.dev/graphql',
-    {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
+function getNotionData(type: string, id: string) {
+  return fetch(`https://notion-api.splitbee.io/v1/${type}/${id}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
     }
+  })
+}
+
+export const getStaticProps = async () => {
+  const indexContentsResponse = await getNotionData(
+    'table',
+    process.env.NEXT_PUBLIC_INDEX_DB_ID || ''
   )
 
-  const SiteSettingsJson: Content[] = await res.json()
-  const ContentsPromises = SiteSettingsJson.filter((c) => !c.Hidden).map(
-    async (content) => {
-      const res = await fetch(
-        'https://notion-api.splitbee.io/v1/page/' + content.id,
-        {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-          }
+  const indexContents: Content[] = await indexContentsResponse.json()
+  const ContentsPromises = indexContents
+    .filter((c) => !c.Hidden)
+    .map(async (content) => {
+      const pageDataResponse = await getNotionData('page', content.id)
+      const pageData = (await pageDataResponse.json()) as BlockMapType
+
+      if (content.ItemDatabaseId) {
+        const itemsResponse = await getNotionData(
+          'table',
+          content.ItemDatabaseId
+        )
+        const linkedItems = await itemsResponse.json()
+        return {
+          ...content,
+          pageData,
+          linkedItems
         }
-      )
-      const json = await res.json()
+      }
       return {
         ...content,
-        pageData: json
+        pageData
       }
-    }
-  )
+    })
   const Contents = await Promise.all(ContentsPromises)
   return {
     props: {
@@ -119,16 +130,20 @@ const IndexPage = ({ contents }: Props) => {
           case 'Organizer':
             return <Organizer {...content} key={content.id} />
           case 'Footer':
-            return <Footer />
+            return <Footer key={content.id} />
+          case 'NewsList':
+            return <NewsList {...content} key={content.id} />
           default:
             return (
-              <section key={content.id}>
-                <SectionTitle
-                  enTitle={content['EN Name']}
-                  jaTitle={content['JP Name']}
-                />
-                <NotionRenderer blockMap={content.pageData} />
-              </section>
+              <Container maxW="container.xl" py={10} key={content.id}>
+                <Box as={'section'} style={{ padding: '0 24px' }}>
+                  <SectionTitle
+                    enTitle={content['EN Name']}
+                    jaTitle={content['JP Name']}
+                  />
+                  <NotionRenderer blockMap={content.pageData} />
+                </Box>
+              </Container>
             )
         }
       })}
