@@ -1,0 +1,19 @@
+$indigo-1: #170f7b;
+
+$font-ja: 'Noto Sans JP', sans-serif;
+$font-en: 'Spartan', sans-serif;
+
+.Footer {
+  font-family: $font-en;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 2;
+  letter-spacing: 0.67px;
+  color: $indigo-1;
+  .PrivacyPolicy {
+    color: $indigo-1;
+  }
+  .CodeForJapan {
+    text-align: right;
+  }
+}

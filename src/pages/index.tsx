@@ -9,6 +9,8 @@ import SpecialSponsors from '~/src/components/SpecialSponsors'
 import Sponsors from '~/src/components/Sponsors'
 import PersonalSponsors from '~/src/components/PersonalSponsors'
 import Organizer from '~/src/components/Organizer'
+import Footer from '~/src/components/Footer'
+
 import { BlockMapType } from 'react-notion'
 import { Box } from '@chakra-ui/react'
 import { NotionRenderer } from 'react-notion/dist'
@@ -28,6 +30,7 @@ type ContentType =
   | 'Sponsors'
   | 'Personal Sponsors'
   | 'Organizer'
+  | 'Footer'
   | string
 
 export interface Content {
@@ -38,6 +41,7 @@ export interface Content {
   'JP Name'?: string
   'EN Name': string
   pageData: BlockMapType
+  Hidden: boolean | undefined
 }
 
 interface Props {
@@ -58,24 +62,25 @@ export const getStaticProps = async () => {
   )
 
   const SiteSettingsJson: Content[] = await res.json()
-  const ContentsPromise = SiteSettingsJson.map((content) => {
-    return fetch('https://notion-api.splitbee.io/v1/page/' + content.id, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then((res) => {
-        return res.json()
-      })
-      .then((json) => {
-        return {
-          ...content,
-          pageData: json
+  const ContentsPromises = SiteSettingsJson.filter((c) => !c.Hidden).map(
+    async (content) => {
+      const res = await fetch(
+        'https://notion-api.splitbee.io/v1/page/' + content.id,
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          }
         }
-      })
-  })
-  const Contents = await Promise.all(ContentsPromise)
+      )
+      const json = await res.json()
+      return {
+        ...content,
+        pageData: json
+      }
+    }
+  )
+  const Contents = await Promise.all(ContentsPromises)
   return {
     props: {
       contents: Contents
@@ -113,6 +118,8 @@ const IndexPage = ({ contents }: Props) => {
             return <PersonalSponsors {...content} key={content.id} />
           case 'Organizer':
             return <Organizer {...content} key={content.id} />
+          case 'Footer':
+            return <Footer />
           default:
             return (
               <section key={content.id}>
