@@ -36,7 +36,7 @@ const HeroView: FC<Content> = (props: Content) => {
         </Button>
       </Flex>
       <Box className={styles.FirstViewContain}>
-        <img src="/CCCLogo.svg" className={styles.Logo} />
+        <img src="/ccc-logo.svg" className={styles.Logo} />
         <Box className={styles.FirstViewCard}>
           <NotionRenderer blockMap={props.pageData} />
         </Box>
