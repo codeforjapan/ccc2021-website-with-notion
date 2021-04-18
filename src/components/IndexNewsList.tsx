@@ -29,6 +29,29 @@ export interface NewsItem {
 const IndexNewsList: FC<Content> = (props: Content) => {
   const items = props.linkedItems as NewsItem[]
 
+  function OnPublished(date: string) {
+    return date ? (
+      <Box
+        as="time"
+        dateTime={date}
+        d="block"
+        color="gray.500"
+        className={styles.NewsListItemDate}
+      >
+        {date}
+      </Box>
+    ) : (
+      <Box
+        as="span"
+        d="block"
+        color="gray.500"
+        className={styles.NewsListItemDate}
+      >
+        2021-XX-XX
+      </Box>
+    )
+  }
+
   return (
     <Container maxW="container.xl" py={10}>
       <Box as={'section'} style={{ padding: '0 24px' }}>
@@ -46,15 +69,7 @@ const IndexNewsList: FC<Content> = (props: Content) => {
               minW="18vw"
               p={5}
             >
-              <Box
-                as="time"
-                dateTime=""
-                d="block"
-                color="gray.500"
-                className={styles.NewsListItemDate}
-              >
-                {item.date || '2021-XX-XX'}
-              </Box>
+              {OnPublished(item.date)}
               <Heading as="h3">{item.title}</Heading>
               <Text pt={3} pb={5}>
                 {item.summary}
