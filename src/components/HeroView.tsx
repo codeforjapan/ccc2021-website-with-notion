@@ -1,7 +1,7 @@
 import { Content } from '~/src/pages'
 import { FC } from 'react'
 import { NotionRenderer } from 'react-notion'
-import { Box, Button, Flex, Spacer, Text } from '@chakra-ui/react'
+import { Box, Flex, Spacer, Text } from '@chakra-ui/react'
 import styles from '~/src/styles/Header.module.scss'
 
 const HeroView: FC<Content> = (props: Content) => {
@@ -24,7 +24,7 @@ const HeroView: FC<Content> = (props: Content) => {
           </div>
         </Flex>
         <Spacer />
-        <Button
+        {/* <Button
           rounded={100}
           mr={4}
           bgColor={'brand.indigo'}
@@ -33,7 +33,7 @@ const HeroView: FC<Content> = (props: Content) => {
           _hover={{ bgColor: 'brand.indigo' }}
         >
           エントリー
-        </Button>
+        </Button> */}
       </Flex>
       <Box className={styles.FirstViewContain}>
         <img src="/ccc-logo.svg" className={styles.Logo} />
