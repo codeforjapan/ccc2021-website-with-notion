@@ -18,22 +18,28 @@ import AppSectionTitle from '~/src/components/AppSectionTitle'
 import AppFooter from '~/src/components/AppFooter'
 import AppShare from '~/src/components/AppShare'
 
-type ContentType =
-  | 'Header'
-  | 'HeroView'
-  | 'Share'
-  | 'Theme Samples'
-  | 'Examination Criteria'
-  | 'Awards'
-  | 'Guidelines'
-  | 'Schedule'
-  | 'Special Sponsors'
-  | 'Sponsors'
-  | 'Personal Sponsors'
-  | 'Organizer'
-  | 'Footer'
-  | 'NewsList'
-  | string
+const contentTypes = [
+  'Header',
+  'HeroView',
+  'Share',
+  'Theme Samples',
+  'Examination Criteria',
+  'Awards',
+  'Guidelines',
+  'Schedule',
+  'Special Sponsors',
+  'Sponsors',
+  'Personal Sponsors',
+  'Organizer',
+  'Footer',
+  'NewsList'
+] as const
+
+type ContentType = typeof contentTypes[number]
+
+function isContentType(target: string): target is ContentType {
+  return (contentTypes as readonly string[]).includes(target)
+}
 
 export interface Content {
   // Auto-generated ID
@@ -42,7 +48,7 @@ export interface Content {
   // Data from `Contents` table
   enTitle: string
   jaTitle?: string
-  type: ContentType
+  type: ContentType | string
   Sponsors?: string[]
   isComingSoon?: boolean
   isHidden?: boolean
@@ -115,6 +121,20 @@ const IndexPage = ({ contents }: Props) => {
   return (
     <Box className={styles.Index}>
       {contents.map((content) => {
+        if (!isContentType(content.type)) {
+          return (
+            <Container maxW="container.xl" py={10} key={content.id}>
+              <Box as={'section'} style={{ padding: '0 24px' }}>
+                <AppSectionTitle
+                  enTitle={content.enTitle}
+                  jaTitle={content.jaTitle}
+                />
+                <NotionRenderer blockMap={content.pageData} />
+              </Box>
+            </Container>
+          )
+        }
+
         switch (content.type) {
           case 'Share':
             return <AppShare key={content.id} />
@@ -145,17 +165,12 @@ const IndexPage = ({ contents }: Props) => {
           case 'NewsList':
             return <IndexNewsList {...content} key={content.id} />
           default:
-            return (
-              <Container maxW="container.xl" py={10} key={content.id}>
-                <Box as={'section'} style={{ padding: '0 24px' }}>
-                  <AppSectionTitle
-                    enTitle={content.enTitle}
-                    jaTitle={content.jaTitle}
-                  />
-                  <NotionRenderer blockMap={content.pageData} />
-                </Box>
-              </Container>
-            )
+            // eslint-disable-next-line no-case-declarations
+            const _throwError: never = content.type
+            // The line above will throw a TS error when a new ContentType is
+            // added to the declaration but the corresponding implementation
+            // is not added to this switch statement.
+            return _throwError
         }
       })}
     </Box>
