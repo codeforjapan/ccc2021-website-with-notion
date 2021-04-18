@@ -1,10 +1,11 @@
-import { Content } from '~/src/pages'
 import { FC } from 'react'
 import { NotionRenderer } from 'react-notion'
 import { Box, Flex, Spacer, Text } from '@chakra-ui/react'
+
+import { Content } from '~/src/pages'
 import styles from '~/src/styles/Header.module.scss'
 
-const HeroView: FC<Content> = (props: Content) => {
+const IndexHeroView: FC<Content> = (props: Content) => {
   return (
     <Box className={styles.FirstView}>
       <Flex
@@ -45,4 +46,4 @@ const HeroView: FC<Content> = (props: Content) => {
   )
 }
 
-export default HeroView
+export default IndexHeroView

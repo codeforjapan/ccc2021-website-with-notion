@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { Button, Flex, Icon, IconButton } from '@chakra-ui/react'
 import { Twitter } from '@icon-park/react'
 
-const Share: FC = () => {
+const AppShare: FC = () => {
   return (
     <Flex justifyContent={'center'} alignItems={'center'} py={'10px'}>
       <IconButton
@@ -19,4 +19,4 @@ const Share: FC = () => {
   )
 }
 
-export default Share
+export default AppShare

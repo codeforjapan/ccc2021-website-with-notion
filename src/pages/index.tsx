@@ -1,22 +1,22 @@
-import ExaminationCriteria from '~/src/components/ExaminationCriteria'
-import SectionTitle from '~/src/components/SectionTitle'
-import HeroView from '~/src/components/HeroView'
-import ThemeSample from '~/src/components/ThemeSample'
-import Awards from '~/src/components/Awards'
-import Guidelines from '~/src/components/Guidelines'
-import Schedule from '~/src/components/Schedule'
-import SpecialSponsors from '~/src/components/SpecialSponsors'
-import Sponsors from '~/src/components/Sponsors'
-import PersonalSponsors from '~/src/components/PersonalSponsors'
-import Organizer from '~/src/components/Organizer'
-import Footer from '~/src/components/Footer'
-import NewsList from '~/src/components/NewsList'
-
 import { BlockMapType } from 'react-notion'
 import { Box, Container } from '@chakra-ui/react'
 import { NotionRenderer } from 'react-notion/dist'
 import styles from '~/src/styles/index.module.scss'
-import Share from '~/src/components/Share'
+
+import IndexAwards from '~/src/components/IndexAwards'
+import IndexExaminationCriteria from '~/src/components/IndexExaminationCriteria'
+import IndexGuidelines from '~/src/components/IndexGuidelines'
+import IndexHeroView from '~/src/components/IndexHeroView'
+import IndexNewsList from '~/src/components/IndexNewsList'
+import IndexOrganizer from '~/src/components/IndexOrganizer'
+import IndexPersonalSponsors from '~/src/components/IndexPersonalSponsors'
+import IndexSchedule from '~/src/components/IndexSchedule'
+import IndexSpecialSponsors from '~/src/components/IndexSpecialSponsors'
+import IndexSponsors from '~/src/components/IndexSponsors'
+import IndexThemeSample from '~/src/components/IndexThemeSample'
+import AppSectionTitle from '~/src/components/AppSectionTitle'
+import AppFooter from '~/src/components/AppFooter'
+import AppShare from '~/src/components/AppShare'
 
 type ContentType =
   | 'Header'
@@ -117,38 +117,38 @@ const IndexPage = ({ contents }: Props) => {
       {contents.map((content) => {
         switch (content.type) {
           case 'Share':
-            return <Share key={content.id} />
+            return <AppShare key={content.id} />
           case 'Header':
             return undefined
           case 'HeroView':
-            return <HeroView {...content} key={content.id} />
+            return <IndexHeroView {...content} key={content.id} />
           case 'Theme Samples':
-            return <ThemeSample {...content} key={content.id} />
+            return <IndexThemeSample {...content} key={content.id} />
           case 'Examination Criteria':
-            return <ExaminationCriteria {...content} key={content.id} />
+            return <IndexExaminationCriteria {...content} key={content.id} />
           case 'Awards':
-            return <Awards {...content} key={content.id} />
+            return <IndexAwards {...content} key={content.id} />
           case 'Guidelines':
-            return <Guidelines {...content} key={content.id} />
+            return <IndexGuidelines {...content} key={content.id} />
           case 'Schedule':
-            return <Schedule {...content} key={content.id} />
+            return <IndexSchedule {...content} key={content.id} />
           case 'Special Sponsors':
-            return <SpecialSponsors {...content} key={content.id} />
+            return <IndexSpecialSponsors {...content} key={content.id} />
           case 'Sponsors':
-            return <Sponsors {...content} key={content.id} />
+            return <IndexSponsors {...content} key={content.id} />
           case 'Personal Sponsors':
-            return <PersonalSponsors {...content} key={content.id} />
+            return <IndexPersonalSponsors {...content} key={content.id} />
           case 'Organizer':
-            return <Organizer {...content} key={content.id} />
+            return <IndexOrganizer {...content} key={content.id} />
           case 'Footer':
-            return <Footer key={content.id} />
+            return <AppFooter key={content.id} />
           case 'NewsList':
-            return <NewsList {...content} key={content.id} />
+            return <IndexNewsList {...content} key={content.id} />
           default:
             return (
               <Container maxW="container.xl" py={10} key={content.id}>
                 <Box as={'section'} style={{ padding: '0 24px' }}>
-                  <SectionTitle
+                  <AppSectionTitle
                     enTitle={content.enTitle}
                     jaTitle={content.jaTitle}
                   />

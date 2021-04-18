@@ -1,8 +1,9 @@
 import { FC } from 'react'
 import { Box, Flex, Spacer, Link } from '@chakra-ui/react'
+
 import styles from '~/src/styles/Footer.module.scss'
 
-const Footer: FC = () => {
+const AppFooter: FC = () => {
   return (
     <Box className={styles.FirstView}>
       <Flex
@@ -31,4 +32,4 @@ const Footer: FC = () => {
   )
 }
 
-export default Footer
+export default AppFooter

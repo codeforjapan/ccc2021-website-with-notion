@@ -1,11 +1,12 @@
-import { Content } from '~/src/pages'
 import { FC } from 'react'
 import { Box, Container } from '@chakra-ui/react'
-import SectionTitle from '~/src/components/SectionTitle'
 import { NotionRenderer } from 'react-notion'
+
+import { Content } from '~/src/pages'
+import AppSectionTitle from '~/src/components/AppSectionTitle'
 import styles from '~/src/styles/ExaminationCriteria.module.scss'
 
-const ExaminationCriteria: FC<Content> = (props: Content) => {
+const IndexExaminationCriteria: FC<Content> = (props: Content) => {
   return (
     <Container maxW="container.xl">
       <Box
@@ -13,11 +14,11 @@ const ExaminationCriteria: FC<Content> = (props: Content) => {
         className={styles.ExaminationCriteria}
         style={{ padding: '0 24px' }}
       >
-        <SectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
+        <AppSectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
         <NotionRenderer blockMap={props.pageData} />
       </Box>
     </Container>
   )
 }
 
-export default ExaminationCriteria
+export default IndexExaminationCriteria

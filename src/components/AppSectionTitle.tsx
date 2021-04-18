@@ -6,7 +6,7 @@ interface Props {
   jaTitle?: string
 }
 
-const SectionTitle: FC<Props> = (props: Props) => {
+const AppSectionTitle: FC<Props> = (props: Props) => {
   return (
     <Box textAlign="left">
       <Heading
@@ -36,4 +36,4 @@ const SectionTitle: FC<Props> = (props: Props) => {
   )
 }
 
-export default SectionTitle
+export default AppSectionTitle

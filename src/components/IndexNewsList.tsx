@@ -1,4 +1,3 @@
-import { Content } from '~/src/pages'
 import { FC } from 'react'
 import {
   Box,
@@ -9,7 +8,9 @@ import {
   LinkBox,
   LinkOverlay
 } from '@chakra-ui/react'
-import SectionTitle from '~/src/components/SectionTitle'
+
+import { Content } from '~/src/pages'
+import AppSectionTitle from '~/src/components/AppSectionTitle'
 import styles from '~/src/styles/NewsList.module.scss'
 
 interface Thumbnail {
@@ -25,13 +26,13 @@ export interface NewsItem {
   link: string
 }
 
-const NewsList: FC<Content> = (props: Content) => {
+const IndexNewsList: FC<Content> = (props: Content) => {
   const items = props.linkedItems as NewsItem[]
 
   return (
     <Container maxW="container.xl" py={10}>
       <Box as={'section'} style={{ padding: '0 24px' }}>
-        <SectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
+        <AppSectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
         <HStack spacing={8} justify="center">
           {items.map((item, index) => (
             <LinkBox
@@ -69,4 +70,4 @@ const NewsList: FC<Content> = (props: Content) => {
   )
 }
 
-export default NewsList
+export default IndexNewsList

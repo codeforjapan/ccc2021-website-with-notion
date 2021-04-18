@@ -1,11 +1,12 @@
-import { Content } from '~/src/pages'
 import { FC } from 'react'
 import { Box, Container } from '@chakra-ui/react'
-import SectionTitle from '~/src/components/SectionTitle'
 import { NotionRenderer } from 'react-notion'
+
+import AppSectionTitle from '~/src/components/AppSectionTitle'
+import { Content } from '~/src/pages'
 import styles from '~/src/styles/Guideline.module.scss'
 
-const Guidelines: FC<Content> = (props: Content) => {
+const IndexGuidelines: FC<Content> = (props: Content) => {
   return (
     <Container maxW="container.xl">
       <Box
@@ -13,7 +14,7 @@ const Guidelines: FC<Content> = (props: Content) => {
         className={styles.GuideLine}
         style={{ padding: '0 24px' }}
       >
-        <SectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
+        <AppSectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
         <Box className={styles.GuideLineCard}>
           <NotionRenderer blockMap={props.pageData} />
         </Box>
@@ -22,4 +23,4 @@ const Guidelines: FC<Content> = (props: Content) => {
   )
 }
 
-export default Guidelines
+export default IndexGuidelines
