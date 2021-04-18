@@ -11,7 +11,7 @@ $font-en: 'Spartan', sans-serif;
     padding-left: 1em;
     font: {
       family: $font-ja;
-      size: 16px;
+      size: 1rem; // 16px;
       weight: 700;
     }
   }
@@ -20,7 +20,7 @@ $font-en: 'Spartan', sans-serif;
     justify-content: center;
     &-Label {
       font-family: $font-ja;
-      font-size: 14px;
+      font-size: 0.875rem; // 14px;
       font-weight: 500;
       letter-spacing: 0.93px;
     }
@@ -29,7 +29,7 @@ $font-en: 'Spartan', sans-serif;
     margin-right: 20px;
     .PersonalSponsors-Sama {
       margin-left: 3px;
-      font-size: 13px;
+      font-size: 0.8125rem; // 13px;
       font-weight: 500;
     }
   }
