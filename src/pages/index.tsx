@@ -69,6 +69,9 @@ function getNotionData(type: string, id: string) {
 }
 
 export const getStaticProps = async () => {
+  if (!process.env.NEXT_PUBLIC_INDEX_DB_ID) {
+    throw new Error('database not specified')
+  }
   const indexContentsResponse = await getNotionData(
     'table',
     process.env.NEXT_PUBLIC_INDEX_DB_ID || ''

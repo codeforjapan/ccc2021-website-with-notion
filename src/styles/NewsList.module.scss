@@ -1,0 +1,25 @@
+$indigo-1: #170f7b;
+
+$font-ja: 'Noto Sans JP', sans-serif;
+$font-en: 'Spartan', sans-serif;
+
+.NewsList {
+  &Item {
+    font-family: $font-ja;
+
+    h3 {
+      font-family: $font-ja;
+      font-size: 1.5rem; // 24px;
+      font-weight: 900;
+      letter-spacing: normal;
+      color: $indigo-1;
+    }
+
+    a {
+      color: $indigo-1;
+      text-decoration: underline;
+      display: block;
+      text-align: center;
+    }
+  }
+}
