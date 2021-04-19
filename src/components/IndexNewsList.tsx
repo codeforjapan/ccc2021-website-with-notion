@@ -2,7 +2,7 @@ import { FC } from 'react'
 import {
   Box,
   Container,
-  HStack,
+  SimpleGrid,
   Heading,
   Text,
   LinkBox,
@@ -52,11 +52,13 @@ const IndexNewsList: FC<Content> = (props: Content) => {
     )
   }
 
+  // columns={{ base: 1, md: 2, lg: 3, xl: 4 }}
+
   return (
     <Container maxW="container.xl" py={10}>
       <Box as={'section'} style={{ padding: '0 24px' }}>
         <AppSectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
-        <HStack spacing={8} justify="center">
+        <SimpleGrid spacing={6} minChildWidth="18em" justifyContent="center">
           {items.map((item, index) => (
             <LinkBox
               key={index}
@@ -65,8 +67,7 @@ const IndexNewsList: FC<Content> = (props: Content) => {
               shadow="lg"
               bg="white"
               overflow="hidden"
-              maxW="lg"
-              minW="18vw"
+              maxW={{ base: undefined, md: 'lg' }}
               p={5}
             >
               {OnPublished(item.date)}
@@ -79,7 +80,7 @@ const IndexNewsList: FC<Content> = (props: Content) => {
               </LinkOverlay>
             </LinkBox>
           ))}
-        </HStack>
+        </SimpleGrid>
       </Box>
     </Container>
   )
