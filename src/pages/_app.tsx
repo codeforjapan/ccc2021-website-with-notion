@@ -7,6 +7,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider theme={theme}>
       <Head>
+        <meta name="robots" content="noindex" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Spartan:wght@600;800&display=swap"
