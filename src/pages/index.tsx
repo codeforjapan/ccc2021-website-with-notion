@@ -7,6 +7,7 @@ import IndexAwards from '~/src/components/IndexAwards'
 import IndexExaminationCriteria from '~/src/components/IndexExaminationCriteria'
 import IndexGuidelines from '~/src/components/IndexGuidelines'
 import IndexHeroView from '~/src/components/IndexHeroView'
+import IndexLinkTo2020 from '~/src/components/IndexLinkTo2020'
 import IndexNewsList from '~/src/components/IndexNewsList'
 import IndexOrganizer from '~/src/components/IndexOrganizer'
 import IndexPersonalSponsors from '~/src/components/IndexPersonalSponsors'
@@ -32,7 +33,8 @@ const contentTypes = [
   'Personal Sponsors',
   'Organizer',
   'Footer',
-  'NewsList'
+  'NewsList',
+  'LinkTo2020'
 ] as const
 
 type ContentType = typeof contentTypes[number]
@@ -164,6 +166,8 @@ const IndexPage = ({ contents }: Props) => {
             return <AppFooter key={content.id} />
           case 'NewsList':
             return <IndexNewsList {...content} key={content.id} />
+          case 'LinkTo2020':
+            return <IndexLinkTo2020 key={content.id} />
           default:
             // eslint-disable-next-line no-case-declarations
             const _throwError: never = content.type
