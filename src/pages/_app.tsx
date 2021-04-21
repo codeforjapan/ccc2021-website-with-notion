@@ -38,6 +38,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta name="twitter:site" content="@codeforJP" />
         <meta name="twitter:creator" content="@codeforJP" />
         <meta property="og:locale" content="ja_JP" />
+        <meta name="robots" content="noindex" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Spartan:wght@600;800&display=swap"
