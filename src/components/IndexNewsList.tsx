@@ -3,6 +3,7 @@ import {
   Box,
   Container,
   SimpleGrid,
+  Center,
   Heading,
   Text,
   LinkBox,
@@ -29,6 +30,21 @@ export interface NewsItem {
 
 const IndexNewsList: FC<Content> = (props: Content) => {
   const items = (props.linkedItems as NewsItem[]).filter((i) => !i.isDraft)
+
+  if (items.length < 1) {
+    return (
+      <Container maxW="container.xl" py={10}>
+        <Box as={'section'} style={{ padding: '0 24px' }}>
+          <AppSectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
+          <Center>
+            <span className={styles.NewsListNoItems}>
+              まだお知らせはありません
+            </span>
+          </Center>
+        </Box>
+      </Container>
+    )
+  }
 
   function OnPublished(date: string) {
     return date ? (
