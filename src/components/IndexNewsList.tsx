@@ -53,8 +53,6 @@ const IndexNewsList: FC<Content> = (props: Content) => {
     )
   }
 
-  // columns={{ base: 1, md: 2, lg: 3, xl: 4 }}
-
   return (
     <Container maxW="container.xl" py={10}>
       <Box as={'section'} style={{ padding: '0 24px' }}>
