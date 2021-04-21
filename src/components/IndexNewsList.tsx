@@ -24,10 +24,11 @@ export interface NewsItem {
   date: string
   thumbnail: Thumbnail
   link: string
+  isDraft: boolean
 }
 
 const IndexNewsList: FC<Content> = (props: Content) => {
-  const items = props.linkedItems as NewsItem[]
+  const items = (props.linkedItems as NewsItem[]).filter((i) => !i.isDraft)
 
   function OnPublished(date: string) {
     return date ? (
