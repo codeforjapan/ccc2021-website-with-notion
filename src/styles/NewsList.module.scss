@@ -22,4 +22,19 @@ $font-en: 'Spartan', sans-serif;
       text-align: center;
     }
   }
+
+  &NoItems {
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    color: #a8a8a8;
+
+    /* テキストを選択不能にする */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 }
