@@ -4,7 +4,7 @@ import theme from '~/theme'
 import { ChakraProvider } from '@chakra-ui/react'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const title = 'Civictech Challenge Cup'
+  const title = 'Civictech Challenge Cup 2021'
   const siteName = title
   const description =
     '「コロナが終わるまで」はもう待てない - 共感しあえる仲間と、ともに挑戦しよう。'
@@ -31,14 +31,35 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={ogp} />
+        <meta property="og:locale" content="ja_JP" />
         <meta name="og:image:width" content="1200" />
         <meta name="og:image:height" content="630" />
         <meta name="fb:app_id" content="207490557254496" />
         <meta name="twitter:image" content={ogp} />
         <meta name="twitter:site" content="@codeforJP" />
         <meta name="twitter:creator" content="@codeforJP" />
-        <meta property="og:locale" content="ja_JP" />
         <meta name="robots" content="noindex" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#603cba" />
+        <meta name="theme-color" content="#ffffff" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Spartan:wght@600;800&display=swap"
