@@ -5,7 +5,7 @@ import styles from '~/src/styles/Footer.module.scss'
 
 const AppFooter: FC = () => {
   return (
-    <Box className={styles.FirstView}>
+    <Box className={styles.Footer}>
       <Flex
         as="footer"
         align="center"
@@ -13,19 +13,22 @@ const AppFooter: FC = () => {
         wrap="wrap"
         bg="transparent"
         color="black"
-        height="60px"
+        height="3.75rem"
       >
-        <Link
-          className={styles.PrivacyPolicy}
-          href="https://www.code4japan.org/privacy-policy"
-          isExternal
-          rel="noopener"
-        >
+        <Link href="https://www.code4japan.org/privacy-policy" isExternal>
           Privacy Policy
         </Link>
         <Spacer width="50px" flex="0 0 50px" />
-        <span className={styles.CodeForJapan}>
-          &copy;&nbsp;2021&nbsp;Code&nbsp;for&nbsp;Japan
+        <span>
+          &copy;&nbsp;2021&nbsp;
+          <Link
+            href="https://www.code4japan.org/"
+            isExternal
+            pl={1}
+            textAlign="right"
+          >
+            Code&nbsp;for&nbsp;Japan
+          </Link>
         </span>
       </Flex>
     </Box>
