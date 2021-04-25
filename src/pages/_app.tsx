@@ -4,8 +4,7 @@ import theme from '~/theme'
 import { ChakraProvider } from '@chakra-ui/react'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const title = 'Civictech Challenge Cup 2021'
-  const siteName = title
+  const siteName = 'Civictech Challenge Cup 2021'
   const description =
     '「コロナが終わるまで」はもう待てない - 共感しあえる仲間と、ともに挑戦しよう。'
   const baseUrl = 'https://ccc2021.code4japan.org'
@@ -14,7 +13,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider theme={theme}>
       <Head>
-        <title>{title}</title>
+        <title>{siteName}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta
@@ -23,11 +22,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="author" content="Code for Japan" />
-        <meta name="apple-mobile-web-app-title" content={title} />
         <meta name="description" content={description} />
         <meta property="og:site_name" content={siteName} />
         <meta property="og:url" content={baseUrl} />
-        <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={ogp} />

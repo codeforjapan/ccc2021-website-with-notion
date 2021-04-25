@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { BlockMapType } from 'react-notion'
 import { Box, Container } from '@chakra-ui/react'
 import { NotionRenderer } from 'react-notion/dist'
@@ -120,8 +121,14 @@ export const getStaticProps = async () => {
 }
 
 const IndexPage = ({ contents }: Props) => {
+  const pageTitle = 'Civictech Challenge Cup 2021'
   return (
     <Box className={styles.Index}>
+      <Head>
+        <title>{pageTitle}</title>
+        <meta name="apple-mobile-web-app-title" content={pageTitle} />
+        <meta property="og:title" content={pageTitle} />
+      </Head>
       {contents.map((content) => {
         if (!isContentType(content.type)) {
           return (
