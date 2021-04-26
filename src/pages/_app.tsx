@@ -35,7 +35,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta name="twitter:image" content={ogp} />
         <meta name="twitter:site" content="@codeforJP" />
         <meta name="twitter:creator" content="@codeforJP" />
-        <meta name="robots" content="noindex" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
