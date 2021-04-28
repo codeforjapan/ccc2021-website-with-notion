@@ -10,6 +10,11 @@ $font-en: 'Spartan', sans-serif;
   line-height: normal;
   color: #170f7b;
 }
+.TitleLine {
+  &Smaller {
+    font-size: smaller;
+  }
+}
 .FirstView {
   margin: 0;
   position: static;
