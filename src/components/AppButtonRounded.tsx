@@ -15,20 +15,19 @@ type Props = ButtonProps & {
 }
 
 const AppButtonRounded: FC<Props> = (props: Props) => {
-  const rel = props.isExternal ? 'noopener noreferrer' : undefined
-  const target = props.isExternal ? '_blank' : undefined
+  const { isExternal, isOutlined, ...otherProps } = props
+  const rel = isExternal ? 'noopener noreferrer' : undefined
+  const target = isExternal ? '_blank' : undefined
 
-  const fgColor: ColorProps['color'] = props.isOutlined
-    ? 'brand.indigo'
-    : 'white'
-  const bgColor: BackgroundProps['bgColor'] = props.isOutlined
+  const fgColor: ColorProps['color'] = isOutlined ? 'brand.indigo' : 'white'
+  const bgColor: BackgroundProps['bgColor'] = isOutlined
     ? 'white'
     : 'brand.indigo'
 
-  const hoverBgColor: BackgroundProps['bgColor'] = props.isOutlined
+  const hoverBgColor: BackgroundProps['bgColor'] = isOutlined
     ? 'gray.100'
     : '#170f7bcc' // 80% alpha of brand.indigo
-  const activeBgColor: BackgroundProps['bgColor'] = props.isOutlined
+  const activeBgColor: BackgroundProps['bgColor'] = isOutlined
     ? 'gray.300'
     : '#170f7b99' // 60% alpha of brand.indigo
 
@@ -47,7 +46,7 @@ const AppButtonRounded: FC<Props> = (props: Props) => {
       className={styles.AppRounded}
       rel={rel}
       target={target}
-      {...props}
+      {...otherProps}
     >
       {props.children}
     </Button>
