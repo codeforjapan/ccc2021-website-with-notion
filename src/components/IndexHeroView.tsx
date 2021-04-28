@@ -21,7 +21,9 @@ const IndexHeroView: FC<Content> = (props: Content) => {
           <div className={styles.Title}>
             <Text className={styles.TitleLine}>Civictech</Text>
             <Text className={styles.TitleLine}>Challenge</Text>
-            <Text className={styles.TitleLine}>Cup</Text>
+            <Text className={styles.TitleLine}>
+              Cup&nbsp;<span className={styles.TitleLineSmaller}>2021</span>
+            </Text>
           </div>
         </Flex>
         <Spacer />
