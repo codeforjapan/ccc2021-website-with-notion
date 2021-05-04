@@ -56,6 +56,7 @@ export interface Content {
   isComingSoon?: boolean
   isHidden?: boolean
   itemDatabaseId?: string
+  additionalText?: string
 
   // Data of the page of each item
   pageData: BlockMapType
