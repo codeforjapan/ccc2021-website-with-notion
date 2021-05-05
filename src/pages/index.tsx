@@ -18,6 +18,7 @@ import IndexSponsors from '~/src/components/IndexSponsors'
 import IndexThemeSample from '~/src/components/IndexThemeSample'
 import AppSectionTitle from '~/src/components/AppSectionTitle'
 import AppFooter from '~/src/components/AppFooter'
+import AppInquiry from '~/src/components/AppInquiry'
 import AppShare from '~/src/components/AppShare'
 
 const contentTypes = [
@@ -35,7 +36,8 @@ const contentTypes = [
   'Organizer',
   'Footer',
   'NewsList',
-  'LinkTo2020'
+  'LinkTo2020',
+  'Inquiry'
 ] as const
 
 type ContentType = typeof contentTypes[number]
@@ -176,6 +178,8 @@ const IndexPage = ({ contents }: Props) => {
             return <IndexNewsList {...content} key={content.id} />
           case 'LinkTo2020':
             return <IndexLinkTo2020 key={content.id} />
+          case 'Inquiry':
+            return <AppInquiry key={content.id} />
           default:
             // eslint-disable-next-line no-case-declarations
             const _throwError: never = content.type
