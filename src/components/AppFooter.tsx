@@ -1,5 +1,6 @@
 import { FC } from 'react'
-import { Box, Flex, Spacer, Link } from '@chakra-ui/react'
+import { Box, Flex, Link } from '@chakra-ui/react'
+import NextLink from 'next/link'
 
 import styles from '~/src/styles/Footer.module.scss'
 
@@ -18,7 +19,11 @@ const AppFooter: FC = () => {
         <Link href="https://www.code4japan.org/privacy-policy" isExternal>
           Privacy Policy
         </Link>
-        <Spacer width="50px" flex="0 0 50px" />
+        ・
+        <Link as={NextLink} href="/analytics" passHref>
+          Google Analyticsについて
+        </Link>
+        ・
         <span>
           &copy;&nbsp;2021&nbsp;
           <Link
