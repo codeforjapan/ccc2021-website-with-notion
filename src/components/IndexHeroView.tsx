@@ -3,6 +3,7 @@ import { NotionRenderer } from 'react-notion'
 import { Box, Flex, Spacer, Text } from '@chakra-ui/react'
 
 import { Content } from '~/src/pages'
+import AppButtonApplicationForm from '~/src/components/AppButtonApplicationForm'
 import styles from '~/src/styles/Header.module.scss'
 
 const IndexHeroView: FC<Content> = (props: Content) => {
@@ -27,16 +28,7 @@ const IndexHeroView: FC<Content> = (props: Content) => {
           </div>
         </Flex>
         <Spacer />
-        {/* <Button
-          rounded={100}
-          mr={4}
-          bgColor={'brand.indigo'}
-          color={'white'}
-          disabled
-          _hover={{ bgColor: 'brand.indigo' }}
-        >
-          エントリー
-        </Button> */}
+        <AppButtonApplicationForm />
       </Flex>
       <Box className={styles.FirstViewContain}>
         <img src="/ccc-logo.svg" className={styles.Logo} />

@@ -4,6 +4,7 @@ import { NotionRenderer } from 'react-notion'
 
 import AppSectionTitle from '~/src/components/AppSectionTitle'
 import { Content } from '~/src/pages'
+import AppButtonApplicationForm from '~/src/components/AppButtonApplicationForm'
 import styles from '~/src/styles/Guideline.module.scss'
 
 const IndexGuidelines: FC<Content> = (props: Content) => {
@@ -18,6 +19,7 @@ const IndexGuidelines: FC<Content> = (props: Content) => {
         <Box className={styles.GuideLineCard}>
           <NotionRenderer blockMap={props.pageData} />
         </Box>
+        <AppButtonApplicationForm />
       </Box>
     </Container>
   )
