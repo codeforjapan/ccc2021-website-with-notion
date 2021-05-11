@@ -1,7 +1,11 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
-import theme from '~/theme'
 import { ChakraProvider } from '@chakra-ui/react'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
+
+import theme from '~/theme'
+import * as gtag from '~/src/lib/gtag'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const siteName = 'Civictech Challenge Cup 2021'
@@ -9,6 +13,18 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     '「コロナが終わるまで」はもう待てない - 共感しあえる仲間と、ともに挑戦しよう。'
   const baseUrl = 'https://ccc2021.code4japan.org'
   const ogp = `${baseUrl}/ogp.png`
+
+  const router = useRouter()
+
+  useEffect(() => {
+    if (!gtag.GOOGLE_ANALYTICS_ID) return
+
+    const handleRouteChange = (path: string) => gtag.pageview(path)
+    const TYPE = 'routeChangeComplete'
+
+    router.events.on(TYPE, handleRouteChange)
+    return () => router.events.off(TYPE, handleRouteChange)
+  }, [router.events])
 
   return (
     <ChakraProvider theme={theme}>

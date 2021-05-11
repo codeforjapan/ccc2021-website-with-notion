@@ -1,0 +1,51 @@
+$indigo-1: #170f7b;
+
+$font-ja: 'Noto Sans JP', sans-serif;
+$font-en: 'Spartan', sans-serif;
+
+.Page {
+  background-image: url(/ccc-background.svg);
+  background-position-x: left;
+  background-position-y: top;
+  background-size: cover;
+  min-height: 100vh;
+
+  section {
+    line-height: 150%;
+    letter-spacing: normal;
+    color: $indigo-1;
+    padding-left: 1em;
+    font: {
+      family: $font-ja;
+      size: 1rem;
+      weight: 400;
+    }
+    p {
+      padding-left: 1em;
+      margin-bottom: 1rem;
+      text-indent: 1rem;
+    }
+    ul {
+      padding-left: 2em;
+      margin-bottom: 1rem;
+    }
+    li {
+      padding: 0;
+    }
+
+    a {
+      color: #195ad2;
+      text-decoration: underline;
+    }
+  }
+}
+
+.Header {
+  margin: 0;
+  position: static;
+  height: 100%;
+  text-align: left;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 20px;
+}
