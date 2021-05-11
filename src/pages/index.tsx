@@ -125,6 +125,10 @@ export const getStaticProps = async () => {
 
 const IndexPage = ({ contents }: Props) => {
   const pageTitle = 'Civictech Challenge Cup 2021'
+
+  const guidelines = contents.find((c) => c.type === 'Guidelines')
+  const showApplicationButton = guidelines ? !guidelines.isHidden : false
+
   return (
     <Box className={styles.Index}>
       <Head>
@@ -153,7 +157,13 @@ const IndexPage = ({ contents }: Props) => {
           case 'Header':
             return undefined
           case 'HeroView':
-            return <IndexHeroView {...content} key={content.id} />
+            return (
+              <IndexHeroView
+                {...content}
+                key={content.id}
+                showApplicationButton={showApplicationButton}
+              />
+            )
           case 'Theme Samples':
             return <IndexThemeSample {...content} key={content.id} />
           case 'Examination Criteria':

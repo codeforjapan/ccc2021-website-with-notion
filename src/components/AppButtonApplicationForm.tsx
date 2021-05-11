@@ -7,11 +7,12 @@ const IndexLinkTo2020: FC = () => {
   return (
     <Center my={3}>
       <AppButtonRounded
-        fontSize="1rem"
-        href="https://ccc2020.code4japan.org"
-        isOutlined
+        fontSize={{ base: '0.9rem', sm: '1.2rem' }}
+        href="https://docs.google.com/forms/d/e/1FAIpQLSc9524kaYGFonFmKmOEvgSbZMcuNqSXVP3KS9kDkbdrv-OtTQ/viewform?usp=sf_link"
+        isExternal
+        mr={1}
       >
-        2020年版はコチラ！
+        エントリーはコチラ！
       </AppButtonRounded>
     </Center>
   )

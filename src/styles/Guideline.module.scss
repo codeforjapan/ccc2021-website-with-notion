@@ -1,4 +1,5 @@
 $indigo-1: #170f7b;
+$linkColor: #195ad2;
 
 $font-ja: 'Noto Sans JP', sans-serif;
 $font-en: 'Spartan', sans-serif;
@@ -7,7 +8,7 @@ $font-en: 'Spartan', sans-serif;
 }
 
 .GuideLineCard {
-  padding: 15px;
+  padding: 1rem 1.5rem;
   background-color: #f5f5f2;
   font-family: $font-ja;
   font-size: 0.9375rem; // 15px;
@@ -25,7 +26,8 @@ $font-en: 'Spartan', sans-serif;
     color: $indigo-1 !important;
   }
   a {
-    color: $indigo-1 !important;
+    color: $linkColor !important;
+    text-decoration: underline;
   }
   p {
     margin-bottom: 0;
@@ -43,6 +45,6 @@ $font-en: 'Spartan', sans-serif;
     margin: 10px;
   }
   ul + p {
-    margin-top: 2em;
+    margin-top: 0.5em;
   }
 }
