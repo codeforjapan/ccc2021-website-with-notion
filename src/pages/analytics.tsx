@@ -10,11 +10,14 @@ import {
   LinkBox,
   LinkOverlay,
   UnorderedList,
-  ListItem
+  ListItem,
+  Button,
+  Center
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import pageStyles from '~/src/styles/analyticsPage.module.scss'
 import headerStyles from '~/src/styles/Header.module.scss'
+import appButtonStyles from '~/src/styles/AppButton.module.scss'
 import AppFooter from '~/src/components/AppFooter'
 
 const AnalyticsPage = () => {
@@ -122,6 +125,24 @@ const AnalyticsPage = () => {
             </Text>
           </Box>
         </Container>
+        <Center>
+          <Button
+            rounded={100}
+            bgColor="white"
+            borderColor={'brand.indigo'}
+            borderWidth={2}
+            color="brand.indigo"
+            _hover={{ bgColor: 'gray.100' }}
+            _active={{ bgColor: 'gray.300' }}
+            px={6}
+            py={3}
+            className={appButtonStyles.AppRounded}
+          >
+            <Link as={NextLink} passHref href="/">
+              トップページに戻る
+            </Link>
+          </Button>
+        </Center>
       </Box>
 
       <AppFooter />
