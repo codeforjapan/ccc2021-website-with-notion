@@ -6,7 +6,11 @@ import { Content } from '~/src/pages'
 import AppButtonApplicationForm from '~/src/components/AppButtonApplicationForm'
 import styles from '~/src/styles/Header.module.scss'
 
-const IndexHeroView: FC<Content> = (props: Content) => {
+type Props = Content & {
+  showApplicationButton: boolean
+}
+
+const IndexHeroView: FC<Props> = (props: Props) => {
   return (
     <Box className={styles.FirstView}>
       <Flex
@@ -28,7 +32,7 @@ const IndexHeroView: FC<Content> = (props: Content) => {
           </div>
         </Flex>
         <Spacer />
-        <AppButtonApplicationForm />
+        {props.showApplicationButton && <AppButtonApplicationForm />}
       </Flex>
       <Box className={styles.FirstViewContain}>
         <img src="/ccc-logo.svg" className={styles.Logo} />
