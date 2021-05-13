@@ -8,10 +8,9 @@ import AppAndMore from '~/src/components/AppAndMore'
 // import SponsorLogo from '~/src/components/SponsorLogo'
 
 const IndexSponsors: FC<Content> = (props: Content) => {
-  const bgColor = props.showComingSoon ? 'transparent' : 'white'
   return (
     <Container maxW="container.xl" py={10}>
-      <Box as={'section'} bgColor={bgColor} p={6}>
+      <Box as={'section'} bgColor="white" p={6}>
         <AppSectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
         {props.showComingSoon ? (
           <AppComingSoon />

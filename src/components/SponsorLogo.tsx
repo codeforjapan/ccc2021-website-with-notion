@@ -45,7 +45,8 @@ const SponsorLogo: FC<Props> = (props: Props) => {
           height: imageHeight,
           width: imageWidth,
           marginTop: marginTop,
-          marginBottom: '1.875rem'
+          marginBottom: '1.875rem',
+          objectFit: 'scale-down'
         }}
       />
     </Button>
