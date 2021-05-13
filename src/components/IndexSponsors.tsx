@@ -10,7 +10,7 @@ const IndexSponsors: FC<Content> = (props: Content) => {
     <Container maxW="container.xl" py={10}>
       <Box as={'section'} style={{ padding: '0 24px' }}>
         <AppSectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
-        {props.isComingSoon && <AppComingSoon />}
+        {props.showComingSoon && <AppComingSoon />}
       </Box>
     </Container>
   )
