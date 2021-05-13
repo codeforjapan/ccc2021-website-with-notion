@@ -1,0 +1,17 @@
+$font-ja: 'Noto Sans JP', sans-serif;
+$font-en: 'Spartan', sans-serif;
+
+.SponsorLogo {
+  > img {
+    margin: {
+      left: 1.5rem;
+      right: 1.5rem;
+    }
+
+    /*
+     * margin-top & margin-bottom はインラインで設定
+     * ロゴによって上下の位置をずらす必要があるためそれぞれ計算する
+     * 初期値は margin-top: 30px; margin-bottom: 30px;
+     */
+  }
+}
