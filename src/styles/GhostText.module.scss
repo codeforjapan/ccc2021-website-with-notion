@@ -5,12 +5,16 @@ $font-en: 'Spartan', sans-serif;
 
 .GhostText {
   font-family: $font-en;
-  font-size: 5rem; // 80px;
+  font-size: 3rem;
   font-weight: bold;
   line-height: 1;
   letter-spacing: -2.51px;
   text-align: center;
   color: #d8d8d8;
+
+  @media screen and (min-width: 48em) {
+    font-size: 5rem; // 80px;
+  }
 
   /* テキストを選択不能にする */
   -webkit-touch-callout: none;
