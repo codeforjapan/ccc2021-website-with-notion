@@ -1,16 +1,27 @@
 import { FC } from 'react'
-import { Box, Container } from '@chakra-ui/react'
+import { Box, Container, Flex } from '@chakra-ui/react'
 
 import { Content } from '~/src/pages'
 import AppSectionTitle from '~/src/components/AppSectionTitle'
 import AppComingSoon from '~/src/components/AppComingSoon'
+import AppAndMore from '~/src/components/AppAndMore'
+// import SponsorLogo from '~/src/components/SponsorLogo'
 
 const IndexSponsors: FC<Content> = (props: Content) => {
+  const bgColor = props.showComingSoon ? 'transparent' : 'white'
   return (
     <Container maxW="container.xl" py={10}>
-      <Box as={'section'} style={{ padding: '0 24px' }}>
+      <Box as={'section'} bgColor={bgColor} p={6}>
         <AppSectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
-        {props.showComingSoon && <AppComingSoon />}
+        {props.showComingSoon ? (
+          <AppComingSoon />
+        ) : (
+          <Flex direction="row" flexWrap="wrap" justifyContent="space-evenly">
+            {/* Insert <SponsorLogo /> here */}
+          </Flex>
+        )}
+
+        {props.showAndMore && <AppAndMore />}
       </Box>
     </Container>
   )
