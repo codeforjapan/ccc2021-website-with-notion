@@ -57,7 +57,6 @@ export interface Content {
   jaTitle?: string
   type: ContentType | string
   Sponsors?: string[]
-  isComingSoon?: boolean
   isHidden?: boolean
   itemDatabaseId?: string
   additionalText?: string
