@@ -46,6 +46,8 @@ function isContentType(target: string): target is ContentType {
   return (contentTypes as readonly string[]).includes(target)
 }
 
+type Status = 'showComingSoon' | 'showAndMore'
+
 export interface Content {
   // Auto-generated ID
   id: string
@@ -59,6 +61,11 @@ export interface Content {
   isHidden?: boolean
   itemDatabaseId?: string
   additionalText?: string
+  status?: Status
+
+  // Flag calculated by status
+  showComingSoon?: boolean
+  showAndMore?: boolean
 
   // Data of the page of each item
   pageData: BlockMapType
@@ -108,9 +115,20 @@ export const getStaticProps = async () => {
           linkedItems
         }
       }
+
+      let showComingSoon = false
+      let showAndMore = false
+
+      if (content.status) {
+        showComingSoon = content.status === 'showComingSoon'
+        showAndMore = content.status === 'showAndMore'
+      }
+
       return {
         ...content,
-        pageData
+        pageData,
+        showComingSoon,
+        showAndMore
       }
     })
   const contents = await Promise.all(contentsPromises)

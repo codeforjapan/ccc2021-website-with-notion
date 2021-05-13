@@ -6,7 +6,7 @@ import styles from '~/src/styles/GhostText.module.scss'
 const AppComingSoon: FC = () => {
   return (
     <Flex justifyContent={'center'} alignItems={'center'}>
-      <span className={styles.GhostText}>Coming Soon</span>
+      <span className={styles.GhostText}>And More</span>
     </Flex>
   )
 }
