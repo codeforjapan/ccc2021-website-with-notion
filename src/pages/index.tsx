@@ -5,6 +5,7 @@ import { NotionRenderer } from 'react-notion/dist'
 import styles from '~/src/styles/index.module.scss'
 
 import IndexAwards from '~/src/components/IndexAwards'
+import IndexCollaborators from '~/src/components/IndexCollaborators'
 import IndexExaminationCriteria from '~/src/components/IndexExaminationCriteria'
 import IndexGuidelines from '~/src/components/IndexGuidelines'
 import IndexHeroView from '~/src/components/IndexHeroView'
@@ -37,7 +38,8 @@ const contentTypes = [
   'Footer',
   'NewsList',
   'LinkTo2020',
-  'Inquiry'
+  'Inquiry',
+  'Collaborators'
 ] as const
 
 type ContentType = typeof contentTypes[number]
@@ -207,6 +209,8 @@ const IndexPage = ({ contents }: Props) => {
             return <IndexLinkTo2020 key={content.id} />
           case 'Inquiry':
             return <AppInquiry key={content.id} />
+          case 'Collaborators':
+            return <IndexCollaborators {...content} key={content.id} />
           default:
             // eslint-disable-next-line no-case-declarations
             const _throwError: never = content.type
