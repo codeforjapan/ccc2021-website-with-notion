@@ -5,17 +5,21 @@ import { Content } from '~/src/pages'
 import AppSectionTitle from '~/src/components/AppSectionTitle'
 import AppComingSoon from '~/src/components/AppComingSoon'
 import AppAndMore from '~/src/components/AppAndMore'
-// import SponsorLogo from '~/src/components/SponsorLogo'
+import SponsorLogo from '~/src/components/SponsorLogo'
 
 const IndexSponsors: FC<Content> = (props: Content) => {
   return (
     <Container maxW="container.xl" py={10}>
       <Box as={'section'} bgColor="white" p={6}>
         <AppSectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
-        {props.showComingSoon ? (
+        {!props.showComingSoon ? (
           <AppComingSoon />
         ) : (
           <Flex direction="row" flexWrap="wrap" justifyContent="space-evenly">
+            <SponsorLogo
+              image="/images/sp-plaid.png"
+              href="https://plaid.co.jp/"
+            />
             {/* Insert <SponsorLogo /> here */}
           </Flex>
         )}
