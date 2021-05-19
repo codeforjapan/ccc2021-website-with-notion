@@ -16,13 +16,15 @@ const IndexCollaborators: FC<Content> = (props: Content) => {
           <AppComingSoon />
         ) : (
           <Flex direction="row" flexWrap="wrap" justifyContent="space-evenly">
-            {
-              <SponsorLogo
-                image="/images/collab-waffle.png"
-                href="https://waffle-waffle.org/"
-              />
-              /* Insert <SponsorLogo /> here */
-            }
+            <SponsorLogo
+              image="/images/collab-waffle.png"
+              href="https://waffle-waffle.org/"
+            />
+            <SponsorLogo
+              image="/images/collab-jubilo-itawa.min.svg"
+              href="https://www.jubilo-iwata.co.jp/hometown/"
+            />
+            {/* Insert <SponsorLogo /> here */}
           </Flex>
         )}
 
