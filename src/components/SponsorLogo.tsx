@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Button } from '@chakra-ui/react'
+import { As, Button } from '@chakra-ui/react'
 
 import styles from '~/src/styles/SponsorLogo.module.scss'
 
@@ -22,9 +22,18 @@ const SponsorLogo: FC<Props> = (props: Props) => {
   const mTopPixel = imageMarginTop || 30 // Default: 1.875rem = 30px
   const marginTop = `${mTopPixel / 16}rem`
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const anchorProps: { as: As<any>; [key: string]: unknown } = props.href
+    ? {
+        as: 'a',
+        rel: 'noopener noreferrer',
+        target: '_blank',
+        href: props.href
+      }
+    : { as: 'div' }
+
   return (
     <Button
-      as="a"
       d="flex"
       h="100%"
       bgColor="white"
@@ -35,9 +44,7 @@ const SponsorLogo: FC<Props> = (props: Props) => {
       p={0}
       m="0.75rem"
       className={styles.SponsorLogo}
-      rel="noopener noreferrer"
-      target="_blank"
-      href={props.href}
+      {...anchorProps}
     >
       <img
         src={props.image}
