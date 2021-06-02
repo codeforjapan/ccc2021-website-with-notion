@@ -12,7 +12,7 @@ const IndexSponsors: FC<Content> = (props: Content) => {
     <Container maxW="container.xl" py={10}>
       <Box as={'section'} bgColor="white" p={6}>
         <AppSectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
-        {!props.showComingSoon ? (
+        {props.showComingSoon ? (
           <AppComingSoon />
         ) : (
           <Flex direction="row" flexWrap="wrap" justifyContent="space-evenly">
