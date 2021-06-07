@@ -18,7 +18,7 @@ const IndexSponsors: FC<Content> = (props: Content) => {
           <Flex direction="row" flexWrap="wrap" justifyContent="space-evenly">
             <SponsorLogo
               href="https://tryt-group.co.jp/"
-              image="/images/tryt-logo.jpg"
+              image="/images/tryt-logo.png"
             />
             <SponsorLogo
               image="/images/sp-plaid.png"
