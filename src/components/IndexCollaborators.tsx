@@ -19,10 +19,12 @@ const IndexCollaborators: FC<Content> = (props: Content) => {
             <SponsorLogo
               image="/images/collab-waffle.png"
               href="https://waffle-waffle.org/"
+              alt="waffle"
             />
             <SponsorLogo
               image="/images/collab-jubilo-itawa.min.svg"
               href="https://www.jubilo-iwata.co.jp/hometown/"
+              alt="ジュビロ磐田"
             />
             {/* Insert <SponsorLogo /> here */}
           </Flex>
