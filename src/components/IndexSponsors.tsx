@@ -17,6 +17,10 @@ const IndexSponsors: FC<Content> = (props: Content) => {
         ) : (
           <Flex direction="row" flexWrap="wrap" justifyContent="space-evenly">
             <SponsorLogo
+              image="/images/sp-udtalk.svg"
+              href="https://udtalk.jp/"
+            />
+            <SponsorLogo
               image="/images/sp-plaid.png"
               href="https://plaid.co.jp/"
             />
