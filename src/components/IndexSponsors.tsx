@@ -19,6 +19,7 @@ const IndexSponsors: FC<Content> = (props: Content) => {
             <SponsorLogo
               href="https://tryt-group.co.jp/"
               image="/images/sp-tryt.png"
+              alt="Tryt"
             />
             <SponsorLogo
               image="/images/sp-plaid.png"
