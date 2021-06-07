@@ -6,6 +6,7 @@ import styles from '~/src/styles/SponsorLogo.module.scss'
 type Props = {
   href: string
   image: string
+  alt: string
 }
 
 const SponsorLogoSalesforce: FC<Props> = (props: Props) => {
@@ -48,6 +49,7 @@ const SponsorLogoSalesforce: FC<Props> = (props: Props) => {
           marginBottom: '1rem',
           objectFit: 'scale-down'
         }}
+        alt={props.alt}
       />
     </Button>
   )

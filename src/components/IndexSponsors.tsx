@@ -20,6 +20,7 @@ const IndexSponsors: FC<Content> = (props: Content) => {
             <SponsorLogoSalesforce
               href="https://www.salesforce.com/jp/"
               image="/images/sp-salesforce.svg"
+              alt="Salesforce"
             />
             <SponsorLogo
               image="/images/sp-plaid.png"
