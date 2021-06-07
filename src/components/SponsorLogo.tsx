@@ -6,6 +6,7 @@ import styles from '~/src/styles/SponsorLogo.module.scss'
 type Props = {
   href: string
   image: string
+  alt: string
   larger?: boolean
   imageMarginTop?: number // By pixel
 }
@@ -48,6 +49,7 @@ const SponsorLogo: FC<Props> = (props: Props) => {
     >
       <img
         src={props.image}
+        alt={props.alt}
         style={{
           height: imageHeight,
           width: imageWidth,
