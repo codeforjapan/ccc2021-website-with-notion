@@ -19,6 +19,7 @@ const IndexSponsors: FC<Content> = (props: Content) => {
             <SponsorLogo
               image="/images/sp-udtalk.svg"
               href="https://udtalk.jp/"
+              alt="udtalk"
             />
             <SponsorLogo
               image="/images/sp-plaid.png"
