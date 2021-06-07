@@ -17,12 +17,12 @@ const IndexSponsors: FC<Content> = (props: Content) => {
         ) : (
           <Flex direction="row" flexWrap="wrap" justifyContent="space-evenly">
             <SponsorLogo
-              image="/images/sp-plaid.png"
-              href="https://plaid.co.jp/"
-            />
-            <SponsorLogo
               href="https://tryt-group.co.jp/"
               image="/images/tryt-logo.jpg"
+            />
+            <SponsorLogo
+              image="/images/sp-plaid.png"
+              href="https://plaid.co.jp/"
             />
             {/* Insert <SponsorLogo /> here */}
           </Flex>
