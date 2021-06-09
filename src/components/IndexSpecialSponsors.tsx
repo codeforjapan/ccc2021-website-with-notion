@@ -13,7 +13,7 @@ const IndexSpecialSponsors: FC<Content> = (props: Content) => {
         <AppSectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
         <Flex direction="row" flexWrap="wrap" justifyContent="space-evenly">
           <SponsorLogo
-            image="/images/sp-creatures.png"
+            image="/images/sp-creatures.svg"
             href="https://www.creatures.co.jp/"
             alt="Creatures"
             larger
