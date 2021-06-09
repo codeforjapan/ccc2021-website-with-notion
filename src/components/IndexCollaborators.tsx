@@ -26,6 +26,11 @@ const IndexCollaborators: FC<Content> = (props: Content) => {
               href="https://www.jubilo-iwata.co.jp/hometown/"
               alt="ジュビロ磐田"
             />
+            <SponsorLogo
+              href="https://www.yokohamafc.com/"
+              image="/images/collab-yokohama-fc.svg"
+              alt="Yokohama FC"
+            />
             {/* Insert <SponsorLogo /> here */}
           </Flex>
         )}
