@@ -31,6 +31,11 @@ const IndexSponsors: FC<Content> = (props: Content) => {
               href="https://plaid.co.jp/"
               alt="plaid"
             />
+            <SponsorLogo
+              href="https://goodpatch.com/"
+              image="/images/sp-goodpatch.png"
+              alt="Goodpatch"
+            />
             {/* Insert <SponsorLogo /> here */}
           </Flex>
         )}
