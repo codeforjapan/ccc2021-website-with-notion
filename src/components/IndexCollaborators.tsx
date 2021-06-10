@@ -31,13 +31,13 @@ const IndexCollaborators: FC<Content> = (props: Content) => {
               href="https://www.yamaga-fc.com/"
               alt="松本山雅FC"
             />
-            <SponsorLogo 
+            <SponsorLogo
               href="https://www.yokohamafc.com/"
               image="/images/collab-yokohama-fc.svg"
               alt="Yokohama FC"
             />
             <SponsorLogo
-              image="/images/collab-codeforyokohama.png"
+              image="/images/collab-codeforyokohama.svg"
               href="https://code4.yokohama/"
               alt="Code for Yokohama"
             />
