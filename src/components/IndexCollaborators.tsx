@@ -27,6 +27,11 @@ const IndexCollaborators: FC<Content> = (props: Content) => {
               alt="ジュビロ磐田"
             />
             <SponsorLogo
+              image="/images/collab-matsumoto-yamaga.png"
+              href="https://www.yamaga-fc.com/"
+              alt="松本山雅FC"
+            />
+            <SponsorLogo
               image="/images/collab-codeforyokohama.png"
               href="https://code4.yokohama/"
               alt="Code for Yokohama"
