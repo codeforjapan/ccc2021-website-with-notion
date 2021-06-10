@@ -17,14 +17,14 @@ const IndexCollaborators: FC<Content> = (props: Content) => {
         ) : (
           <Flex direction="row" flexWrap="wrap" justifyContent="space-evenly">
             <SponsorLogo
-              image="/images/collab-waffle.png"
-              href="https://waffle-waffle.org/"
-              alt="waffle"
-            />
-            <SponsorLogo
               image="/images/collab-jubilo-itawa.min.svg"
               href="https://www.jubilo-iwata.co.jp/hometown/"
               alt="ジュビロ磐田"
+            />
+            <SponsorLogo
+              href="https://www.yokohamafc.com/"
+              image="/images/collab-yokohama-fc.svg"
+              alt="Yokohama FC"
             />
             <SponsorLogo
               image="/images/collab-matsumoto-yamaga.png"
@@ -32,9 +32,9 @@ const IndexCollaborators: FC<Content> = (props: Content) => {
               alt="松本山雅FC"
             />
             <SponsorLogo
-              href="https://www.yokohamafc.com/"
-              image="/images/collab-yokohama-fc.svg"
-              alt="Yokohama FC"
+              image="/images/collab-waffle.png"
+              href="https://waffle-waffle.org/"
+              alt="waffle"
             />
             <SponsorLogo
               image="/images/collab-codeforyokohama.svg"
