@@ -41,6 +41,11 @@ const IndexCollaborators: FC<Content> = (props: Content) => {
               href="https://code4.yokohama/"
               alt="Code for Yokohama"
             />
+            <SponsorLogo
+              image="/images/collab-redesignerforstudent.png"
+              href="https://student.redesigner.jp/"
+              alt="ReDesigner for Student"
+            />
             {/* Insert <SponsorLogo /> here */}
           </Flex>
         )}
