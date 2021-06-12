@@ -32,6 +32,11 @@ const IndexSponsors: FC<Content> = (props: Content) => {
               alt="plaid"
             />
             <SponsorLogo
+              href="https://goodpatch.com/"
+              image="/images/sp-goodpatch.png"
+              alt="Goodpatch"
+            />
+            <SponsorLogo
               href="https://www.yahoo.co.jp/"
               image="/images/sp-yahoo!japan.svg"
               alt="Yahoo!Japan"
