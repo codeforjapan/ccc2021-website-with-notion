@@ -6,6 +6,7 @@ import AppSectionTitle from '~/src/components/AppSectionTitle'
 import AppComingSoon from '~/src/components/AppComingSoon'
 import AppAndMore from '~/src/components/AppAndMore'
 import SponsorLogo from '~/src/components/SponsorLogo'
+import SponsorLogoSalesforce from '~/src/components/SponsorLogoSalesforce'
 
 const IndexSponsors: FC<Content> = (props: Content) => {
   return (
@@ -16,6 +17,11 @@ const IndexSponsors: FC<Content> = (props: Content) => {
           <AppComingSoon />
         ) : (
           <Flex direction="row" flexWrap="wrap" justifyContent="space-evenly">
+            <SponsorLogoSalesforce
+              href="https://www.salesforce.com/jp/"
+              image="/images/sp-salesforce.svg"
+              alt="Salesforce"
+            />
             <SponsorLogo
               image="/images/sp-udtalk.svg"
               href="https://udtalk.jp/"
