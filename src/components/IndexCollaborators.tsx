@@ -17,14 +17,34 @@ const IndexCollaborators: FC<Content> = (props: Content) => {
         ) : (
           <Flex direction="row" flexWrap="wrap" justifyContent="space-evenly">
             <SponsorLogo
+              image="/images/collab-jubilo-itawa.min.svg"
+              href="https://www.jubilo-iwata.co.jp/hometown/"
+              alt="ジュビロ磐田"
+            />
+            <SponsorLogo
+              href="https://www.yokohamafc.com/"
+              image="/images/collab-yokohama-fc.svg"
+              alt="Yokohama FC"
+            />
+            <SponsorLogo
+              image="/images/collab-matsumoto-yamaga.png"
+              href="https://www.yamaga-fc.com/"
+              alt="松本山雅FC"
+            />
+            <SponsorLogo
               image="/images/collab-waffle.png"
               href="https://waffle-waffle.org/"
               alt="waffle"
             />
             <SponsorLogo
-              image="/images/collab-jubilo-itawa.min.svg"
-              href="https://www.jubilo-iwata.co.jp/hometown/"
-              alt="ジュビロ磐田"
+              image="/images/collab-codeforyokohama.svg"
+              href="https://code4.yokohama/"
+              alt="Code for Yokohama"
+            />
+            <SponsorLogo
+              image="/images/collab-redesignerforstudent.png"
+              href="https://student.redesigner.jp/"
+              alt="ReDesigner for Student"
             />
             {/* Insert <SponsorLogo /> here */}
           </Flex>
