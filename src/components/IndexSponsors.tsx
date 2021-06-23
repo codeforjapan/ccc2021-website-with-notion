@@ -17,6 +17,11 @@ const IndexSponsors: FC<Content> = (props: Content) => {
           <AppComingSoon />
         ) : (
           <Flex direction="row" flexWrap="wrap" justifyContent="space-evenly">
+            <SponsorLogo
+              href="https://www.google.co.jp/"
+              image="/images/sp-google.svg"
+              alt="Google"
+            />
             <SponsorLogoSalesforce
               href="https://www.salesforce.com/jp/"
               image="/images/sp-salesforce.svg"
@@ -46,11 +51,6 @@ const IndexSponsors: FC<Content> = (props: Content) => {
               href="https://www.yahoo.co.jp/"
               image="/images/sp-yahoo!japan.svg"
               alt="Yahoo!Japan"
-            />
-            <SponsorLogo
-              href="https://www.google.co.jp/"
-              image="/images/sp-google.svg"
-              alt="Google"
             />
             {/* Insert <SponsorLogo /> here */}
           </Flex>
