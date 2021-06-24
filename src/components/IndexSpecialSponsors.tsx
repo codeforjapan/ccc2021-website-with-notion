@@ -18,6 +18,12 @@ const IndexSpecialSponsors: FC<Content> = (props: Content) => {
             alt="aws"
             larger
           />
+          <SponsorLogo
+            image="/images/sp-creatures.svg"
+            href="https://www.creatures.co.jp/"
+            alt="Creatures"
+            larger
+          />
           {/* Insert <SponsorLogo /> here */}
         </Flex>
         <AppAndMore />

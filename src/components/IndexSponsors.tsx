@@ -6,6 +6,7 @@ import AppSectionTitle from '~/src/components/AppSectionTitle'
 import AppComingSoon from '~/src/components/AppComingSoon'
 import AppAndMore from '~/src/components/AppAndMore'
 import SponsorLogo from '~/src/components/SponsorLogo'
+import SponsorLogoSalesforce from '~/src/components/SponsorLogoSalesforce'
 
 const IndexSponsors: FC<Content> = (props: Content) => {
   return (
@@ -16,10 +17,35 @@ const IndexSponsors: FC<Content> = (props: Content) => {
           <AppComingSoon />
         ) : (
           <Flex direction="row" flexWrap="wrap" justifyContent="space-evenly">
+            <SponsorLogoSalesforce
+              href="https://www.salesforce.com/jp/"
+              image="/images/sp-salesforce.svg"
+              alt="Salesforce"
+            />
+            <SponsorLogo
+              image="/images/sp-udtalk.svg"
+              href="https://udtalk.jp/"
+              alt="UDトーク"
+            />
+            <SponsorLogo
+              href="https://tryt-group.co.jp/"
+              image="/images/sp-tryt.png"
+              alt="Tryt"
+            />
             <SponsorLogo
               image="/images/sp-plaid.png"
               href="https://plaid.co.jp/"
               alt="plaid"
+            />
+            <SponsorLogo
+              href="https://goodpatch.com/"
+              image="/images/sp-goodpatch.png"
+              alt="Goodpatch"
+            />
+            <SponsorLogo
+              href="https://www.yahoo.co.jp/"
+              image="/images/sp-yahoo!japan.svg"
+              alt="Yahoo!Japan"
             />
             {/* Insert <SponsorLogo /> here */}
           </Flex>
