@@ -3,7 +3,6 @@ import { Box, Container, Flex } from '@chakra-ui/react'
 
 import { Content } from '~/src/pages'
 import AppSectionTitle from '~/src/components/AppSectionTitle'
-import AppAndMore from './AppAndMore'
 import SponsorLogo from './SponsorLogo'
 
 const IndexSpecialSponsors: FC<Content> = (props: Content) => {
