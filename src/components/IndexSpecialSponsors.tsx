@@ -24,9 +24,7 @@ const IndexSpecialSponsors: FC<Content> = (props: Content) => {
             alt="Creatures"
             larger
           />
-          {/* Insert <SponsorLogo /> here */}
         </Flex>
-        <AppAndMore />
       </Box>
     </Container>
   )
