@@ -1,19 +1,25 @@
 import { FC } from 'react'
-import { Center } from '@chakra-ui/react'
+import { Button, Center } from '@chakra-ui/react'
 
-import AppButtonRounded from '~/src/components/AppButtonRounded'
+import styles from '~/src/styles/AppButton.module.scss'
 
 const IndexLinkTo2020: FC = () => {
   return (
     <Center my={3}>
-      <AppButtonRounded
-        fontSize={{ base: '0.9rem', sm: '1.2rem' }}
-        href="https://docs.google.com/forms/d/e/1FAIpQLSc9524kaYGFonFmKmOEvgSbZMcuNqSXVP3KS9kDkbdrv-OtTQ/viewform?usp=sf_link"
-        isExternal
-        mr={1}
+      <Button
+        rounded={100}
+        disabled
+        px={8}
+        py={6}
+        className={styles.AppRounded}
+        _disabled={{
+          opacity: 1,
+          cursor: 'default'
+        }}
+        _hover={{}}
       >
-        エントリーはコチラ！
-      </AppButtonRounded>
+        エントリーは終了しました
+      </Button>
     </Center>
   )
 }
