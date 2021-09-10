@@ -29,7 +29,9 @@ export interface NewsItem {
 }
 
 const IndexNewsList: FC<Content> = (props: Content) => {
-  const items = (props.linkedItems as NewsItem[]).filter((i) => !i.isDraft)
+  const items = (props.linkedItems as NewsItem[])
+    .filter((i) => !i.isDraft)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
   if (items.length < 1) {
     return (
