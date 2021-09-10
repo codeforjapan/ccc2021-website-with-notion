@@ -29,7 +29,9 @@ export interface NewsItem {
 }
 
 const IndexNewsList: FC<Content> = (props: Content) => {
-  const items = (props.linkedItems as NewsItem[]).filter((i) => !i.isDraft)
+  const items = (props.linkedItems as NewsItem[])
+    .filter((i) => !i.isDraft)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
   if (items.length < 1) {
     return (
@@ -90,9 +92,11 @@ const IndexNewsList: FC<Content> = (props: Content) => {
               <Text pt={3} pb={5}>
                 {item.summary}
               </Text>
-              <LinkOverlay isExternal href={item.link}>
-                詳細はこちら
-              </LinkOverlay>
+              {item.link && (
+                <LinkOverlay isExternal href={item.link}>
+                  詳細はこちら
+                </LinkOverlay>
+              )}
             </LinkBox>
           ))}
         </SimpleGrid>
