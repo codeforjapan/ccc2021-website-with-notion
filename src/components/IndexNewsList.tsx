@@ -92,9 +92,11 @@ const IndexNewsList: FC<Content> = (props: Content) => {
               <Text pt={3} pb={5}>
                 {item.summary}
               </Text>
-              <LinkOverlay isExternal href={item.link}>
-                詳細はこちら
-              </LinkOverlay>
+              {item.link && (
+                <LinkOverlay isExternal href={item.link}>
+                  詳細はこちら
+                </LinkOverlay>
+              )}
             </LinkBox>
           ))}
         </SimpleGrid>
