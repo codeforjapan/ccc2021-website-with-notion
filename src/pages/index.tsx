@@ -80,10 +80,6 @@ interface Props {
   fallbackEnabled: boolean
 }
 
-const fallbackHostname = process.env.NEXT_PUBLIC_FALLBACK_HOSTNAME
-  ? `https://${process.env.NEXT_PUBLIC_FALLBACK_HOSTNAME}`
-  : 'http://localhost:3000'
-
 const fetchOptions: RequestInit = {
   method: 'GET',
   headers: {
@@ -106,11 +102,9 @@ async function getIndexContentsData(): Promise<Content[]> {
     return await response.json()
   } catch (e) {
     _fallbackEnabled = true
-    const fallback = await fetch(
-      `${fallbackHostname}/index-contents-fallback.json`,
-      fetchOptions
-    )
-    return await fallback.json()
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const fallback = require('../fallback/index-contents-fallback.json')
+    return fallback
   }
 }
 
@@ -120,12 +114,9 @@ async function getLinkedItemData(databaseId: string): Promise<unknown> {
     return await response.json()
   } catch (e) {
     _fallbackEnabled = true
-    const fallback = await fetch(
-      `${fallbackHostname}/linked-item-fallback.json`,
-      fetchOptions
-    )
-    const entire = await fallback.json()
-    return entire[databaseId]
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const fallback = require('../fallback/linked-item-fallback.json')
+    return fallback[databaseId]
   }
 }
 
