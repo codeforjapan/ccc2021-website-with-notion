@@ -1,0 +1,175 @@
+[
+  {
+    "id": "cbee9b6fca5d4ffc94f9d5f727a9de81",
+    "enTitle": "Header",
+    "jaTitle": "",
+    "type": "Header",
+    "isHidden": false,
+    "status": "",
+    "_showComingSoon": false,
+    "_showAndMore": false
+  },
+  {
+    "id": "75c63e32d0fb409cbf7110d6d390710d",
+    "enTitle": "HeroView",
+    "jaTitle": "",
+    "type": "HeroView",
+    "isHidden": false,
+    "status": "",
+    "_showComingSoon": false,
+    "_showAndMore": false
+  },
+  {
+    "id": "766be2ce89384da788482def3b2c08f9",
+    "enTitle": "Share",
+    "jaTitle": "",
+    "type": "Share",
+    "isHidden": true,
+    "status": "",
+    "_showComingSoon": false,
+    "_showAndMore": false
+  },
+  {
+    "id": "a9cebf2acb0f40c194befb1571c5b161",
+    "enTitle": "LinkTo2020",
+    "jaTitle": "",
+    "type": "LinkTo2020",
+    "isHidden": false,
+    "status": "",
+    "_showComingSoon": false,
+    "_showAndMore": false
+  },
+  {
+    "id": "81d062fbac174aef80b32a675c9a4519",
+    "enTitle": "News",
+    "jaTitle": "お知らせ",
+    "type": "NewsList",
+    "isHidden": false,
+    "status": "",
+    "_showComingSoon": false,
+    "_showAndMore": false,
+    "itemDatabaseId": "b48c7fee9fa7457a8abd367d2d3e1e11"
+  },
+  {
+    "id": "ebd3f7c8359e40089febfefabb0dca17",
+    "enTitle": "Theme Samples",
+    "jaTitle": "テーマサンプル",
+    "type": "Theme Samples",
+    "isHidden": true,
+    "status": "",
+    "_showComingSoon": false,
+    "_showAndMore": false
+  },
+  {
+    "id": "aa6889ef787b4870a11a6974acedb9ed",
+    "enTitle": "Examination Criteria",
+    "jaTitle": "審査基準",
+    "type": "Examination Criteria",
+    "isHidden": true,
+    "status": "",
+    "_showComingSoon": false,
+    "_showAndMore": false
+  },
+  {
+    "id": "3c1ac212cfb046d0b17077edd3db06de",
+    "enTitle": "Awards",
+    "jaTitle": "表彰・賞典",
+    "type": "Awards",
+    "isHidden": true,
+    "status": "",
+    "_showComingSoon": false,
+    "_showAndMore": false
+  },
+  {
+    "id": "cbbd2e35e735470e850e3952adafb46a",
+    "enTitle": "Guidelines",
+    "jaTitle": "募集要項",
+    "type": "Guidelines",
+    "isHidden": false,
+    "status": "",
+    "_showComingSoon": false,
+    "_showAndMore": false
+  },
+  {
+    "id": "ea12116953bd4d1db3fdc4a10ca9e556",
+    "enTitle": "Schedule",
+    "jaTitle": "コンテストの流れ",
+    "type": "Schedule",
+    "isHidden": false,
+    "status": "",
+    "_showComingSoon": false,
+    "_showAndMore": false
+  },
+  {
+    "id": "775a10dccb6f4b44a776ea4aebff0e77",
+    "enTitle": "Special Sponsors",
+    "jaTitle": "特別協賛",
+    "type": "Special Sponsors",
+    "isHidden": false,
+    "status": "",
+    "_showComingSoon": false,
+    "_showAndMore": false
+  },
+  {
+    "id": "5137db2a72504f94a63b2636449d7ccd",
+    "enTitle": "Sponsors",
+    "jaTitle": "協賛",
+    "type": "Sponsors",
+    "isHidden": false,
+    "status": "showAndMore",
+    "_showComingSoon": false,
+    "_showAndMore": true
+  },
+  {
+    "id": "bd0e02c1e9cc454abef797c61742e93d",
+    "enTitle": "Collaborators",
+    "jaTitle": "協力",
+    "type": "Collaborators",
+    "isHidden": false,
+    "status": "showAndMore",
+    "_showComingSoon": false,
+    "_showAndMore": true
+  },
+  {
+    "id": "6d4b965b31354fddb0500d9d0f258c7b",
+    "enTitle": "Personal Sponsors",
+    "jaTitle": "個人協賛",
+    "type": "Personal Sponsors",
+    "isHidden": false,
+    "status": "",
+    "_showComingSoon": false,
+    "_showAndMore": false,
+    "itemDatabaseId": "fc71e3ca29b042acab82386836a9f6d7",
+    "additionalText": "（6月7日現在）"
+  },
+  {
+    "id": "1612acd7e948430c940481ae09764374",
+    "enTitle": "Organizer",
+    "jaTitle": "運営",
+    "type": "Organizer",
+    "isHidden": false,
+    "status": "",
+    "_showComingSoon": false,
+    "_showAndMore": false
+  },
+  {
+    "id": "1dae56c788704e5897fc83df688b67f9",
+    "enTitle": "Inquiry",
+    "jaTitle": "",
+    "type": "Inquiry",
+    "isHidden": false,
+    "status": "",
+    "_showComingSoon": false,
+    "_showAndMore": false
+  },
+  {
+    "id": "4e87e8797f1b4cd19fdef2d448d89194",
+    "enTitle": "Footer",
+    "jaTitle": "",
+    "type": "Footer",
+    "isHidden": false,
+    "status": "",
+    "_showComingSoon": false,
+    "_showAndMore": false
+  }
+]

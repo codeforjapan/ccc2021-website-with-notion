@@ -77,27 +77,65 @@ export interface Content {
 
 interface Props {
   contents: Content[]
+  fallbackEnabled: boolean
 }
 
+const fallbackHostname = process.env.NEXT_PUBLIC_FALLBACK_HOSTNAME
+  ? `https://${process.env.NEXT_PUBLIC_FALLBACK_HOSTNAME}`
+  : 'http://localhost:3000'
+
+const fetchOptions: RequestInit = {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json'
+  }
+}
+
+let _fallbackEnabled = false
+
 function getNotionData(type: string, id: string) {
-  return fetch(`https://notion-api.splitbee.io/v1/${type}/${id}`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
+  return fetch(`https://notion-api.splitbee.io/v1/${type}/${id}`, fetchOptions)
+}
+
+async function getIndexContentsData(): Promise<Content[]> {
+  try {
+    const response = await getNotionData(
+      'table',
+      process.env.NEXT_PUBLIC_INDEX_DB_ID!
+    )
+    return await response.json()
+  } catch (e) {
+    _fallbackEnabled = true
+    const fallback = await fetch(
+      `${fallbackHostname}/index-contents-fallback.json`,
+      fetchOptions
+    )
+    return await fallback.json()
+  }
+}
+
+async function getLinkedItemData(databaseId: string): Promise<unknown> {
+  try {
+    const response = await getNotionData('table', databaseId)
+    return await response.json()
+  } catch (e) {
+    _fallbackEnabled = true
+    const fallback = await fetch(
+      `${fallbackHostname}/linked-item-fallback.json`,
+      fetchOptions
+    )
+    const entire = await fallback.json()
+    return entire[databaseId]
+  }
 }
 
 export const getStaticProps = async () => {
   if (!process.env.NEXT_PUBLIC_INDEX_DB_ID) {
     throw new Error('database not specified')
   }
-  const indexContentsResponse = await getNotionData(
-    'table',
-    process.env.NEXT_PUBLIC_INDEX_DB_ID || ''
-  )
 
-  const indexContents: Content[] = await indexContentsResponse.json()
+  const indexContents: Content[] = await getIndexContentsData()
+
   const contentsPromises = indexContents
     .filter((c) => !c.isHidden)
     .map(async (content) => {
@@ -105,11 +143,7 @@ export const getStaticProps = async () => {
       const pageData = (await pageDataResponse.json()) as BlockMapType
 
       if (content.itemDatabaseId) {
-        const itemsResponse = await getNotionData(
-          'table',
-          content.itemDatabaseId
-        )
-        const linkedItems = await itemsResponse.json()
+        const linkedItems = await getLinkedItemData(content.itemDatabaseId)
         return {
           ...content,
           pageData,
@@ -136,13 +170,14 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      contents
+      contents,
+      fallbackEnabled: _fallbackEnabled
     },
     revalidate: 1
   }
 }
 
-const IndexPage = ({ contents }: Props) => {
+const IndexPage = ({ contents, fallbackEnabled }: Props) => {
   const pageTitle = 'Civictech Challenge Cup 2021'
 
   const guidelines = contents.find((c) => c.type === 'Guidelines')
@@ -154,6 +189,7 @@ const IndexPage = ({ contents }: Props) => {
         <title>{pageTitle}</title>
         <meta name="apple-mobile-web-app-title" content={pageTitle} />
         <meta property="og:title" content={pageTitle} />
+        {fallbackEnabled && <meta data-fallback="true" />}
       </Head>
       {contents.map((content) => {
         if (!isContentType(content.type)) {
