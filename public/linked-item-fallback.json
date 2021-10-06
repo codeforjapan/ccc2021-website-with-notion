@@ -1,0 +1,126 @@
+{
+  "b48c7fee9fa7457a8abd367d2d3e1e11": [
+    {
+      "title": "プレスリリースを公開しました",
+      "summary": "Civictech Challenge Cup 2021の開催発表に関するプレスリリースを公開しました。",
+      "date": "2021-04-28",
+      "link": "https://prtimes.jp/main/html/rd/p/000000028.000039198.html",
+      "thumbnail": "",
+      "isDraft": false
+    },
+    {
+      "title": "キックオフイベントを開催します",
+      "summary": "継続開催にあたり、キックオフイベントをオンライン開催します！Code for Sabae代表 福野泰介さん、昨年度参加者の方にご登壇いただく予定です。",
+      "date": "2021-05-07",
+      "link": "https://cccu22event0.peatix.com/",
+      "thumbnail": "https://www.notion.so/26934389ddf84eb7beb9b07d26ddc603",
+      "isDraft": false
+    },
+    {
+      "title": "勉強会イベントを開催します",
+      "summary": "社会課題を３つのカテゴリに分け、参加者の課題抽出の参考になるよう、ゲストを招いた勉強会を開催いたします。",
+      "date": "2021-06-12",
+      "link": "https://cccu22event1.peatix.com/view",
+      "thumbnail": "",
+      "isDraft": false
+    },
+    {
+      "title": "参加者エントリーを締め切りました",
+      "summary": "昨年度の２倍となる200名の方からエントリーいただきました。エントリー締め切り後は参加者がチームを組み、プロトタイプに取り掛かります。10月9日の最終審査会で発表される作品を楽しみにお待ちください。",
+      "date": "2021-07-31",
+      "link": "",
+      "thumbnail": "",
+      "isDraft": false
+    },
+    {
+      "title": "参加者向けワークショップを開催します",
+      "summary": "エントリーした学生限定の「企画立案」「デザイン」「サーバレス開発」の参加型勉強会（ワークショップ）を開催します。参加者は参加者ガイドを確認し、ご参加ください。",
+      "date": "2021-08-07",
+      "link": "",
+      "thumbnail": "",
+      "isDraft": false
+    },
+    {
+      "title": "学生チーム向けメンタリング期間が始まります",
+      "summary": "パートナー企業やCode for Japanのデザイナー、エンジニア、プロジェクトマネージャーなど社会人メンターが学生チームの進捗状況に合わせたメンタリングをおこないます。",
+      "date": "2021-08-25",
+      "link": "",
+      "thumbnail": "",
+      "isDraft": false
+    },
+    {
+      "title": "最終審査会を10/9(土)に開催します",
+      "summary": "最終審査会開催まで１ヶ月となりました。当日はオーディエンス賞の投票も予定しておりますので、お誘い合わせの上ご参加くださいませ。",
+      "date": "2021-09-09",
+      "link": "https://ccc2021-final.peatix.com/view",
+      "thumbnail": "",
+      "isDraft": false
+    }
+  ],
+  "fc71e3ca29b042acab82386836a9f6d7": [
+    {
+      "name": "福野泰介",
+      "isHidden": false
+    },
+    {
+      "name": "Y.Makita",
+      "isHidden": false
+    },
+    {
+      "name": "岩崎太一",
+      "isHidden": false
+    },
+    {
+      "name": "Naoki Ota",
+      "isHidden": false
+    },
+    {
+      "name": "konny",
+      "isHidden": false
+    },
+    {
+      "name": "田野恵里子",
+      "isHidden": false
+    },
+    {
+      "name": "小副川健",
+      "isHidden": false
+    },
+    {
+      "name": "Bess",
+      "isHidden": false
+    },
+    {
+      "name": "島田効太朗",
+      "isHidden": false
+    },
+    {
+      "name": "矢野敏樹",
+      "isHidden": false
+    },
+    {
+      "name": "高木俊輔",
+      "isHidden": false
+    },
+    {
+      "name": "フレキシブル基板",
+      "isHidden": false
+    },
+    {
+      "name": "Yuki Takatsu",
+      "isHidden": false
+    },
+    {
+      "name": "0505Keitan",
+      "isHidden": false
+    },
+    {
+      "name": "Yuki Mihashi",
+      "isHidden": false
+    },
+    {
+      "name": "平山絢一",
+      "isHidden": false
+    }
+  ]
+}
