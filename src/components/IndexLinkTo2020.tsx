@@ -5,13 +5,14 @@ import AppButtonRounded from '~/src/components/AppButtonRounded'
 
 const IndexLinkTo2020: FC = () => {
   return (
-    <Center my={3}>
+    <Center pt={8}>
       <AppButtonRounded
         fontSize="1rem"
         href="https://ccc2020.code4japan.org"
         isOutlined
+        isExternal
       >
-        2020年版はコチラ！
+        2020年の様子もあわせてチェック！
       </AppButtonRounded>
     </Center>
   )
