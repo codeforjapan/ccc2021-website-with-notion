@@ -9,11 +9,7 @@ import styles from '~/src/styles/FinalWinners.module.scss'
 const IndexAwards: FC<Content> = (props: Content) => {
   return (
     <Container maxW="container.xl" pt={8} pb={2}>
-      <Box
-        as={'section'}
-        className={styles.FinalWinners}
-        style={{ padding: '0 24px' }}
-      >
+      <Box as={'section'} className={styles.FinalWinners}>
         <AppSectionTitle enTitle={props.enTitle} jaTitle={props.jaTitle} />
         <Box pt={4}>
           <NotionRenderer blockMap={props.pageData} />
