@@ -7,6 +7,8 @@ import styles from '~/src/styles/index.module.scss'
 import IndexAwards from '~/src/components/IndexAwards'
 import IndexCollaborators from '~/src/components/IndexCollaborators'
 import IndexExaminationCriteria from '~/src/components/IndexExaminationCriteria'
+import FinalReviewVideo from '~/src/components/IndexFinalReviewVideo'
+import FinalWinners from '~/src/components/IndexFinalWinners'
 import IndexGuidelines from '~/src/components/IndexGuidelines'
 import IndexHeroView from '~/src/components/IndexHeroView'
 import IndexLinkTo2020 from '~/src/components/IndexLinkTo2020'
@@ -39,7 +41,9 @@ const contentTypes = [
   'NewsList',
   'LinkTo2020',
   'Inquiry',
-  'Collaborators'
+  'Collaborators',
+  'FinalReviewVideo',
+  'FinalWinners'
 ] as const
 
 type ContentType = typeof contentTypes[number]
@@ -238,6 +242,10 @@ const IndexPage = ({ contents, fallbackEnabled }: Props) => {
             return <AppInquiry key={content.id} />
           case 'Collaborators':
             return <IndexCollaborators {...content} key={content.id} />
+          case 'FinalReviewVideo':
+            return <FinalReviewVideo {...content} key={content.id} />
+          case 'FinalWinners':
+            return <FinalWinners {...content} key={content.id} />
           default:
             // eslint-disable-next-line no-case-declarations
             const _throwError: never = content.type
